@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace API.Models
+namespace DAL
 {
     using System;
     using System.Data.Entity;
@@ -19,7 +19,12 @@ namespace API.Models
             : base("name=GraghEntities")
         {
         }
-    
+
+        public DbSet<T> GetDbSet<T>() where T : class
+        {
+            return this.Set<T>();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
