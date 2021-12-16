@@ -1,0 +1,9 @@
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\bin\Debug\deme.exe.config
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\bin\Debug\deme.exe
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\bin\Debug\deme.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\obj\Debug\deme.csprojAssemblyReference.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\obj\Debug\deme.Properties.Resources.resources
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\obj\Debug\deme.csproj.GenerateResource.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\obj\Debug\deme.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\obj\Debug\deme.exe
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\deme\obj\Debug\deme.pdb
