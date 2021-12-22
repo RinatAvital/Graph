@@ -1,10 +1,11 @@
-﻿using DAI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
+using Models;
 
 namespace DAL
 {
@@ -13,9 +14,9 @@ namespace DAL
         public DBConection() { }
         public List<T> GetDbSet<T>() where T : class
         {
-            using (GraghEntities DB = new GraghEntities())
+            using (GraphEntities db = new GraphEntities())
             {
-                return DB.GetDbSet<T>().ToList();
+                return db.GetDbSet<T>().ToList();
             }
         }
         public enum ExecuteActions
@@ -26,30 +27,28 @@ namespace DAL
         }
         public void Execute<T>(T entity, ExecuteActions exAction) where T : class
         {
-            using (GraghEntities DB = new GraghEntities())
+            using (GraphEntities db = new GraphEntities())
             {
-                var model = DB.Set<T>();
+                var DB = db.Set<T>();
                 switch (exAction)
                 {
                     case ExecuteActions.Insert:
-                        model.Add(entity);
+                        DB.Add(entity);
                         break;
                     case ExecuteActions.Update:
-                        model.Attach(entity);
-                        DB.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                        DB.Attach(entity);
+                        db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                         break;
                     case ExecuteActions.Delete:
-                        model.Attach(entity);
-                        DB.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+                        DB.Attach(entity);
+                        db.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
                         break;
                     default:
                         break;
                 }
-                DB.SaveChanges();
+                db.SaveChanges();
 
             }
         }
     }
 }
-
-

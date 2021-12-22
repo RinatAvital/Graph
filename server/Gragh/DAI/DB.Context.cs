@@ -7,24 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL
+namespace Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GraghEntities : DbContext
+    public partial class GraphEntities : DbContext
     {
-        public GraghEntities()
-            : base("name=GraghEntities")
+        public GraphEntities()
+            : base("name=GraphEntities")
         {
         }
-
-        public DbSet<T> GetDbSet<T>() where T : class
-        {
-            return this.Set<T>();
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -32,5 +27,13 @@ namespace DAL
     
         public virtual DbSet<Graphs> Graphs { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+
+
+
+        public DbSet<T> GetDbSet<T>() where T : class
+        {
+            return this.Set<T>();
+        }
+
     }
 }
