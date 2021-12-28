@@ -38,7 +38,7 @@ namespace Deme
 
             
 
-            Console.WriteLine(count);
+            //Console.WriteLine(count);
 
             //int s= strGraph.IndexOf(" ");
 

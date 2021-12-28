@@ -10,7 +10,7 @@ namespace Deme
     {
         public static void Main()
         {
-            //    Parameter[] equations = new Parameter[4];
+           
 
 
 
@@ -158,7 +158,7 @@ namespace Deme
             
             Equation e= Calculate.culc_parameters(str);
             Console.WriteLine();
-            Console.WriteLine(e.Class.ToString() + " מעלה-");
+            Console.WriteLine((Convert.ToInt32(e.Class)-48) + " class");
             foreach (var p in e.Parameters)
             {
                 Console.WriteLine(p.Value + ", " + p.Operator + ", " + p.Class);
