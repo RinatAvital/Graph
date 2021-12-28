@@ -1,0 +1,12 @@
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\BL.dll.config
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\BL.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\BL.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\EntityFramework.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\EntityFramework.xml
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\obj\Debug\BL.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\obj\Debug\BL.pdb

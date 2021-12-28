@@ -1,0 +1,21 @@
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\bin\Debug\Deme.exe.config
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\bin\Debug\Deme.exe
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\bin\Debug\Deme.pdb
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.csprojAssemblyReference.cache
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.csproj.CoreCompileInputs.cache
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.exe
+C:\Users\רינת אביטל\Desktop\עבודות סמינר\הנדסת תוכנה\שנה ב\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.pdb
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\bin\Debug\Deme.exe.config
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\bin\Debug\Deme.exe
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\bin\Debug\Deme.pdb
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.csprojAssemblyReference.cache
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.csproj.CoreCompileInputs.cache
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.exe
+G:\project -המורה יעל עמר\פרויקט\project\server\Deme\Deme\obj\Debug\Deme.pdb
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\bin\Debug\Deme.exe.config
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\bin\Debug\Deme.exe
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\bin\Debug\Deme.pdb
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\obj\Debug\Deme.csprojAssemblyReference.cache
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\obj\Debug\Deme.csproj.CoreCompileInputs.cache
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\obj\Debug\Deme.exe
+X:\סמינר\התמחויות\הנדסת תוכנה\שנה ב\תלמידות\רינת אביטל\שנה ב\Deme\Deme\obj\Debug\Deme.pdb
