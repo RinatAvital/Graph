@@ -9,16 +9,12 @@ namespace Deme
     public static class Calculate
     {
         
-
-        //פונקציה מקבלת מחרוזת ומחזירה רשימת פרמטרים
+        //  פונקציה מקבלת מחרוזת ומחזירה אובייקט עם רשימת פרמטרים והמעלה המקסימלית
         public static Equation culc_parameters(string str)
         {
             List<Parameter> Equations = new List<Parameter>();
             Equation e = new Equation();
 
-
-
-           
             string strCopy = str;
 
             if (str.Length != 0 && str[0] != '-') // covers case when first member is positive, if it is not enough you can use str.TrimStart()[0]
@@ -115,8 +111,8 @@ namespace Deme
             }
             e.Class = maxC;
             e.Parameters = Equations;
-
             return e;
+
         }
 
        
