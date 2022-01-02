@@ -10,7 +10,18 @@ namespace Deme
     {
         public double X { get; set; }
         public double Y { get; set; }
-        public List<Point> Points { get; set; }
+        public static List<Point> Points { get; set; }=new List<Point>();
+        
+
+        public Point(double x,double y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+        public void ToString()
+        {
+            Console.WriteLine("("+this.X+", "+this.Y+")");
+        }
 
         public static List<Point> culc_points(Equation e)
         {
@@ -25,10 +36,11 @@ namespace Deme
             //חישוב טרינום -נקודות חיתוך עם ציר האיקס
             double x1 = ((-b) + Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
             double x2 = ((-b) - Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
-            
+            Points.Add(new Point(x1, 0));
+            Points.Add(new Point(x2, 0));
             Console.WriteLine("print Cutting points");
-            Console.WriteLine("(" + x1 + ", 0)");
-            Console.WriteLine("(" + x2 + ", 0)");
+            //Console.WriteLine("(" + x1 + ", 0)");
+            //Console.WriteLine("(" + x2 + ", 0)");
             Console.WriteLine();
 
             //חישוב קודקוד הפונקציה - נקודת קיצון
@@ -37,7 +49,8 @@ namespace Deme
                 + (b * (Math.Pow(Xkodkod, Convert.ToInt32(e.Parameters[1].Class.ToString()))))
                 + (c * (Math.Pow(Xkodkod, Convert.ToInt32(e.Parameters[2].Class.ToString()))));
             Console.WriteLine("kodkod");
-            Console.WriteLine("(" + Xkodkod + ", " + Ykodkod + ")");
+            Points.Add(new Point(Xkodkod, Ykodkod));
+            //Console.WriteLine("(" + Xkodkod + ", " + Ykodkod + ")");
 
             //חישוב נגזרת הפונקציה
             string derivative = (a * (Convert.ToInt32(e.Parameters[0].Class.ToString()))).ToString();//נגזרת
@@ -46,8 +59,7 @@ namespace Deme
             Console.WriteLine("f'(x) = " + derivative);
             Console.WriteLine();
 
-
-            return null;
+            return Points;
         }
 
 

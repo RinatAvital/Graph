@@ -14,7 +14,7 @@ namespace Deme
 
 
 
-            string str = "x^2-9";
+            string str = "x^2-8x-9";
             //    string strCopy = str;
 
             //    if (str.Length != 0 && str[0] != '-') // covers case when first member is positive, if it is not enough you can use str.TrimStart()[0]
@@ -156,13 +156,13 @@ namespace Deme
             //    Console.ReadLine();
 
             
-            Equation e= Calculate.culc_parameters(str);
+            Calculate.culc_parameters(str);
             Console.WriteLine();
-            Console.WriteLine((Convert.ToInt32(e.Class)-48) + " class");
-            foreach (var p in e.Parameters)
-            {
-                Console.WriteLine(p.Value + ", " + p.Operator + ", " + p.Class);
-            }
+            //Console.WriteLine((Convert.ToInt32(e.Class)-48) + " class");
+            //foreach (var p in e.Parameters)
+            //{
+            //    Console.WriteLine(p.Value + ", " + p.Operator + ", " + p.Class);
+            //}
             Console.ReadLine();
 
         }

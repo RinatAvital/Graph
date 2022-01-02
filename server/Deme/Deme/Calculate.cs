@@ -10,7 +10,7 @@ namespace Deme
     {
         
         //  פונקציה מקבלת מחרוזת ומחזירה אובייקט עם רשימת פרמטרים והמעלה המקסימלית
-        public static Equation culc_parameters(string str)
+        public static void culc_parameters(string str)
         {
             List<Parameter> Equations = new List<Parameter>();
             Equation e = new Equation();
@@ -46,9 +46,11 @@ namespace Deme
                     case '+':
                         {
                             Parameter p = new Parameter();
+                            p.Value += '+';
                             p.Operator = '+'; i++;
                             if (strGraph[i] == 'x')
                             {
+                                
                                 p.Value = "1";
                                
                             }
@@ -79,6 +81,7 @@ namespace Deme
                     case '-':
                         {
                             Parameter p = new Parameter();
+                            p.Value += '-';
                             p.Operator = '-'; i++;
                             if (strGraph[i] == 'x')
                             {
@@ -111,7 +114,17 @@ namespace Deme
             }
             e.Class = maxC;
             e.Parameters = Equations;
-            return e;
+
+            Console.WriteLine((Convert.ToInt32(e.Class) - 48) + " class");
+            foreach (var p in e.Parameters)
+            {
+                Console.WriteLine(p.Value + ", " + p.Operator + ", " + p.Class);
+            }
+            List<Point> points= Point.culc_points(e);
+            foreach (var p in points)
+            {
+                p.ToString();
+            }
 
         }
 
