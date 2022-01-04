@@ -26,3 +26,10 @@ C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Deme\Deme\obj\Debug\D
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Deme\Deme\obj\Debug\Deme.csproj.CoreCompileInputs.cache
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Deme\Deme\obj\Debug\Deme.exe
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Deme\Deme\obj\Debug\Deme.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\bin\Debug\Deme.exe.config
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\bin\Debug\Deme.exe
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\bin\Debug\Deme.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\obj\Debug\Deme.csprojAssemblyReference.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\obj\Debug\Deme.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\obj\Debug\Deme.exe
+C:\Users\student\Desktop\project-AinatAvital\server\Deme\Deme\obj\Debug\Deme.pdb
