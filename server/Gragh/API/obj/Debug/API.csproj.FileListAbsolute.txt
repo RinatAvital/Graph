@@ -84,3 +84,11 @@ C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\obj\Debug\API.cspr
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\obj\Debug\API.csproj.CopyComplete
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\obj\Debug\API.dll
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\obj\Debug\API.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\BL.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\DTO.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\DAL.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\BL.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\BL.dll.config
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\DTO.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\DAL.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\API\bin\DAL.dll.config

@@ -1,24 +1,20 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BL;
 
 namespace API.Controllers
 {
     public class DefaultController : ApiController
     {
         // GET: api/Default
-        public IEnumerable<string> Get()
+        public List<DtoUser> GetAllUser()
         {
-            
-        }
-
-        // GET: api/Default/5
-        public string Get(int id)
-        {
-            return "value";
+            return BL.UserManager.getUser();
         }
 
         // POST: api/Default

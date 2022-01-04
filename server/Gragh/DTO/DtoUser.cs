@@ -8,7 +8,7 @@ using DAL;
 
 namespace DTO
 {
-    class DtoUser
+    public class DtoUser
     {
         public long Code { get; set; }
         public string firstName { get; set; }

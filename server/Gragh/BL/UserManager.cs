@@ -6,19 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using System.Web.UI.WebControls;
 
 namespace BL
 {
-    class UserManager
+    public class UserManager
     {
         static DBConection db = new DBConection();
         public static List<DtoUser> getUser()
         {
             List<Users> user = db.GetDbSet<Users>().ToList();
-            List<DataList> list = DTOtoList(user);
-
-            return null;
+            List<DtoUser> list = DtoUser.DTOtoList(user);
+            return list;
         }
         
 

@@ -8,7 +8,7 @@ using Models;
 
 namespace DTO
 {
-    class DtoGraph
+    public class DtoGraph
     {
         public long graphCode { get; set; }
         public string graphString { get; set; }

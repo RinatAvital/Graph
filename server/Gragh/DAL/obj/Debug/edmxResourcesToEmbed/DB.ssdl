@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GraphModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Graphs">
+    <Key>
+      <PropertyRef Name="graphCode" />
+    </Key>
+    <Property Name="graphCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="graphString" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userCode" Type="bigint" Nullable="false" />
+    <Property Name="creationDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+    <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Graphs__creation__2D27B809">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Graphs" Type="Self.Graphs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Graphs">
+        <PropertyRef Name="userCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GraphModelStoreContainer">
+    <EntitySet Name="Graphs" EntityType="Self.Graphs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Graphs__creation__2D27B809" Association="Self.FK__Graphs__creation__2D27B809">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Graphs" EntitySet="Graphs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

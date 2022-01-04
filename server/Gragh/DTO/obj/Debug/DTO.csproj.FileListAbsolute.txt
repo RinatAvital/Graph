@@ -1,0 +1,12 @@
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\DTO.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\DTO.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\DAL.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\EntityFramework.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\DAL.pdb
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\DAL.dll.config
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\bin\Debug\EntityFramework.xml
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.dll
+C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.pdb

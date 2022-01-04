@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GraphModelStoreContainer" CdmEntityContainer="GraphEntities">
+    <EntitySetMapping Name="Graphs">
+      <EntityTypeMapping TypeName="GraphModel.Graphs">
+        <MappingFragment StoreEntitySet="Graphs">
+          <ScalarProperty Name="graphCode" ColumnName="graphCode" />
+          <ScalarProperty Name="graphString" ColumnName="graphString" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GraphModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
