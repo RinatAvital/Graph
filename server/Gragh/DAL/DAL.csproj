@@ -67,7 +67,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="DBConection.cs" />
-    <Compile Include="GraphEntity.cs" />
     <Compile Include="Graphs.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>

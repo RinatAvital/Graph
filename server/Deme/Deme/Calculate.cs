@@ -8,9 +8,12 @@ namespace Deme
 {
     public static class Calculate
     {
+        /// <summary>
+        /// פונקציה מקבלת מחרוזת ומחזירה אובייקט עם רשימת פרמטרים והמעלה המקסימלית
+        /// </summary>
+        /// <param name="str"> מחרוזת המשוואה</param>
         
-        //  פונקציה מקבלת מחרוזת ומחזירה אובייקט עם רשימת פרמטרים והמעלה המקסימלית
-        public static void culc_parameters(string str)
+      /*  public static void culc_parameters(string str)
         {
             List<Parameter> Equations = new List<Parameter>();
             Equation e = new Equation();
@@ -50,9 +53,7 @@ namespace Deme
                             p.Operator = '+'; i++;
                             if (strGraph[i] == 'x')
                             {
-                                
                                 p.Value = "1";
-                               
                             }
                             while (strGraph[i] != 'x' && strGraph[i] != '^' && strGraph[i] != ' ')
                                 p.Value += strGraph[i++];
@@ -68,6 +69,7 @@ namespace Deme
                                 else
                                 {
                                     p.Class = '1';
+                                    if (p.Class > maxC) maxC = p.Class;
                                     i++;
                                 }
                             }
@@ -100,6 +102,7 @@ namespace Deme
                                 else
                                 {
                                     p.Class = '1';
+                                    if (p.Class > maxC) maxC = p.Class;
                                     i++;
                                 }
                             }
@@ -112,22 +115,83 @@ namespace Deme
                         break;
                 }
             }
+
+            List<Parameter> eq = Equations.OrderByDescending(c => c.Class).ToList();
+            
             e.Class = maxC;
-            e.Parameters = Equations;
+            e.Count = count;
+            e.Parameters = eq;
 
             Console.WriteLine((Convert.ToInt32(e.Class) - 48) + " class");
+            Console.WriteLine("mis evarim "+count);
             foreach (var p in e.Parameters)
             {
                 Console.WriteLine(p.Value + ", " + p.Operator + ", " + p.Class);
             }
+
+            Console.WriteLine();
             List<Point> points= Point.culc_points(e);
             foreach (var p in points)
             {
-                p.ToString();
+                p.ToPrintPoint();
+            }
+
+        }
+        */
+        public static void Advancedculc_parameters(string str)
+        {
+            List<Parameter> Equations = new List<Parameter>();
+            Equation e = new Equation();
+
+            string strCopy = str;
+            string strGraph = string.Join(" ", strCopy
+               .Replace(" ", "") // remove all spaces because they kind of random now
+               .Replace("+", " +") // add space to signs to keep them with their value
+               .Replace("-", " -")
+               .Split(' '));
+
+           string [] s= strGraph.Split(' ');
+
+
+            Equation equation = new Equation();
+            equation.Parameters = new List<Parameter>();
+
+            for (int i = 0; i < s.Length&&s.Length!=0; i++)
+            {
+                Parameter p = new Parameter();
+                //בדיקת מעלת הפרמטר
+                switch (s[i][s[i].Length-1])
+                {
+                    case 'x':
+                        {
+                            p.Class = 1;
+                            break;
+                        }              
+                    default:
+                        {
+                            if (s[i][s[i].Length-2] == '^')//להגביל מעלה גבוהה
+                            {
+                                p.Class = Convert.ToInt32(s[i][s[i].Length - 1]);
+                            }
+                            else
+                                p.Class = 0;
+
+                        break;}
+                }
+                calcOperator(p,s[i]);
             }
 
         }
 
-       
+        public static void calcOperator(Parameter p, string v)
+        {
+            p.Operator = '+';
+            if (v[0] == '-')
+                p.Operator = '-';
+            string s = v.Split('+', '-', '^', 'x').OrderByDescending(x=>x.Length).ToArray()[0] ;
+            p.Value = Convert.ToDouble(s);
+      
+           
+        }
     }
 }

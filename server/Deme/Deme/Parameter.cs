@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Deme
 {
+    
     public class Parameter
     {
-        public string Value { get; set; }
+        public double Value { get; set; }
         public char Operator { get; set; }
-        public char Class { get; set; }
+        public int Class { get; set; }
 
 
         public Parameter()
