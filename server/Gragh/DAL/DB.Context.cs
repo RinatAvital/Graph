@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Models
+namespace DAL
 {
     using System;
     using System.Data.Entity;
@@ -27,8 +27,6 @@ namespace Models
     
         public virtual DbSet<Graphs> Graphs { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-
-
 
         public DbSet<T> GetDbSet<T>() where T : class
         {

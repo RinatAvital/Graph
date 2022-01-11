@@ -1,4 +1,4 @@
-﻿using Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +16,12 @@ namespace DTO
         public string userName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+
+
+        public DtoUser()
+        {
+
+        }
 
         public DtoUser(Users u)
         {
@@ -35,6 +41,18 @@ namespace DTO
                 DTOlist.Add(new DtoUser(u));
             }
             return DTOlist;
+        }
+
+        public Users toTableEntity()
+        {
+            Users u = new Users();
+            u.Code = Code;
+            u.firstName =firstName;
+            u.lastName = lastName;
+            u.userName = userName;
+            u.email = email;
+            u.password = password;
+            return u;
         }
     }
 }
