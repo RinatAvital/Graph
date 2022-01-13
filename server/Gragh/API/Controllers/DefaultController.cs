@@ -6,20 +6,22 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BL;
+using DAL;
 
 namespace API.Controllers
 {
     public class DefaultController : ApiController
     {
-        // GET: api/Default
+        // GET: api/Default/GetAllUser
         public List<DtoUser> GetAllUser()
         {
             return BL.UserManager.getUser();
         }
 
         // POST: api/Default
-        public void Post([FromBody]string value)
+        public Users PostSignUp([FromBody]DtoUser user)
         {
+            return BL.UserManager.signUp(user);
         }
 
         // PUT: api/Default/5
