@@ -25,9 +25,10 @@ namespace Deme
         public static List<Point> culc_points(Equation e)
         {
             List<Point> Points = new List<Point>();
-            double a;
-            double b;
-            double c;
+            double a=0;
+            double b=0;
+            double c=0;
+            
 
 
 

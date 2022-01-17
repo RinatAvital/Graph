@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace BL.models
 {
-    class Equation
+    class Parameter
     {
+        public double Value { get; set; }
+        public char Operator { get; set; }
         public int Class { get; set; }
-        public int Count { get; set; }
-        public List<Parameter> Parameters { get; set; }
+
+
+        public Parameter()
+        {
+
+        }
     }
 }
