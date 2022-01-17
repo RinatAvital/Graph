@@ -25,11 +25,21 @@ namespace DTO
         public static List<DtoGraph> DTOtoList(List<Graphs> list)
         {
             List<DtoGraph> DTOlist = new List<DtoGraph>();
-            foreach (var u in list)
+            foreach (var g in list)
             {
-                DTOlist.Add(new DtoGraph(u));
+                DTOlist.Add(new DtoGraph(g));
             }
             return DTOlist;
+        }
+
+        public Graphs toTableEntity()
+        {
+            Graphs g = new Graphs();
+            g.graphCode = graphCode;
+            g.graphString = graphString;
+            g.userCode = userCode;
+            g.creationDate = creationDate;
+            return g;
         }
     }
 }

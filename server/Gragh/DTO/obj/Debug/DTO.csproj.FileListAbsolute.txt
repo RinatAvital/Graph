@@ -10,3 +10,15 @@ C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.cspr
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.dll
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\DTO\obj\Debug\DTO.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DTO.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DTO.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\EntityFramework.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.dll.config
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\EntityFramework.xml
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.pdb

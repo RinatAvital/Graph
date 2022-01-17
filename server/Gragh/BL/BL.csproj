@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GraphManager.cs" />
     <Compile Include="models\Calculate.cs" />
     <Compile Include="models\Equation.cs" />
     <Compile Include="models\Point.cs" />

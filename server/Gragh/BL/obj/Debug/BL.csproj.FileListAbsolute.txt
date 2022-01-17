@@ -15,3 +15,20 @@ C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\DTO.dll
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\DAL.pdb
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\DAL.dll.config
 C:\Users\student\Desktop\project-AinatAvital\server\Gragh\BL\bin\Debug\DTO.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\BL.dll.config
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\BL.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\BL.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DAL.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DTO.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\EntityFramework.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DAL.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DAL.dll.config
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DTO.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\EntityFramework.xml
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.dll
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.pdb
