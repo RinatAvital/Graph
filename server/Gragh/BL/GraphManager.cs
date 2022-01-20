@@ -19,12 +19,14 @@ namespace BL
 
         }
 
-        public static void getOneGraph()
+        public static List<Point> getOneGraph()
         {
             List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
             List<DtoGraph> g = DtoGraph.DTOtoList(graph);
-            //return g[0].graphString;
-            Calculate.Advancedculc_parameters(g[0].graphString);
+            List<Point> points = Calculate.Advancedculc_parameters(g[1].graphString);
+            return points;
+            //return new DtoGraph(g, points);
+
         }
 
     }

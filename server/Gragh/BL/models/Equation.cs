@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL.models
 {
-    class Equation
+    public class Equation
     {
         public int Class { get; set; }
         public int Count { get; set; }

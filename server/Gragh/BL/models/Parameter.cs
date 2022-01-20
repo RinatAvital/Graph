@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL.models
 {
-    class Parameter
+    public class Parameter
     {
         public double Value { get; set; }
         public char Operator { get; set; }

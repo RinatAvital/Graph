@@ -57,6 +57,7 @@
     <Compile Include="models\Equation.cs" />
     <Compile Include="models\Parameter.cs" />
     <Compile Include="models\Point.cs" />
+    <Compile Include="models\userDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>

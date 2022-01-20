@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BL.models
 {
-    class Calculate
+    public class Calculate
     {
-        public static void Advancedculc_parameters(string str)
+        public static List<Point> Advancedculc_parameters(string str)
         {
             string strCopy = str;
             string strGraph = string.Join(" ", strCopy
@@ -55,7 +55,7 @@ namespace BL.models
             equation.Parameters = equation.Parameters.OrderByDescending(c => c.Class).ToList();
             equation.Class = equation.Parameters.Max(m => m.Class);
             equation.Count = count;
-            print(equation);
+            return print(equation);
         }
 
         public static void calcOperator(Parameter p, string v)
@@ -69,7 +69,7 @@ namespace BL.models
 
         }
 
-        public static void print(Equation e)
+        public static List<Point> print(Equation e)
         {
 
             Console.WriteLine(e.Class + " class");
@@ -85,6 +85,7 @@ namespace BL.models
             {
                 p.ToPrintPoint();
             }
+            return points;
         }
     }
 }

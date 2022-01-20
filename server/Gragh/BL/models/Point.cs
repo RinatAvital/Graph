@@ -39,13 +39,12 @@ namespace BL.models
                 Points.Add(new Point(0, b1));
             }
 
-
             //משוואה עם שלושה איברים מלאים
             else if (e.Count == 3 && e.Class == 2)
             {
-                a = e.Parameters[0].Value; //להכפיל באופרטור
-                b = e.Parameters[1].Value;//להכפיל באופרטור
-                c = e.Parameters[2].Value; //להכפיל באופרטור
+                a = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1); //להכפיל באופרטור
+                b = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);//להכפיל באופרטור
+                c = e.Parameters[2].Value * (e.Parameters[0].Operator == '-' ? -1 : 1); //להכפיל באופרטור
 
             }
 
@@ -65,7 +64,6 @@ namespace BL.models
                 b = 0;
                 c = e.Parameters[1].Value;
             }
-
 
             Console.WriteLine();
             Console.WriteLine("print a, b, c");
@@ -101,5 +99,5 @@ namespace BL.models
 
 
     }
-    
+
 }

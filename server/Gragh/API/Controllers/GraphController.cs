@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BL.models;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace API.Controllers
 {
     public class GraphController : ApiController
     {
+        // GET: api/Graph/getOneGraph
+        public List<Point> GetOneGraph()
+        {
+            return BL.GraphManager.getOneGraph();
+        }
+
         // GET: api/Graph/GetAllGraph
         public List<DtoGraph> GetAllGraph()
         {
-            return BL.GraphManager.getGraph();
-        }
-
-        // GET: api/Graph/5
-        public string Get(int id)
-        {
-            return "value";
+            return BL.GraphManager.getGraphs();
         }
 
         // POST: api/Graph

@@ -22,3 +22,15 @@ C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\D
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.dll
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.pdb
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DTO.dll
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DTO.pdb
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.dll
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\EntityFramework.dll
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.pdb
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.dll.config
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\EntityFramework.xml
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.dll
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.pdb

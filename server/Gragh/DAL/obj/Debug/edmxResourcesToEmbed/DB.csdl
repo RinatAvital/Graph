@@ -8,7 +8,7 @@
     <Property Name="graphString" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="userCode" Type="Int64" Nullable="false" />
     <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Users" Relationship="Self.FK__Graphs__creation__2D27B809" FromRole="Graphs" ToRole="Users" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Graphs__userCode__267ABA7A" FromRole="Graphs" ToRole="Users" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -20,9 +20,9 @@
     <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Graphs" Relationship="Self.FK__Graphs__creation__2D27B809" FromRole="Users" ToRole="Graphs" />
+    <NavigationProperty Name="Graphs" Relationship="Self.FK__Graphs__userCode__267ABA7A" FromRole="Users" ToRole="Graphs" />
   </EntityType>
-  <Association Name="FK__Graphs__creation__2D27B809">
+  <Association Name="FK__Graphs__userCode__267ABA7A">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Graphs" Type="Self.Graphs" Multiplicity="*" />
     <ReferentialConstraint>
@@ -37,7 +37,7 @@
   <EntityContainer Name="GraphEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Graphs" EntityType="Self.Graphs" />
     <EntitySet Name="Users" EntityType="Self.Users" />
-    <AssociationSet Name="FK__Graphs__creation__2D27B809" Association="Self.FK__Graphs__creation__2D27B809">
+    <AssociationSet Name="FK__Graphs__userCode__267ABA7A" Association="Self.FK__Graphs__userCode__267ABA7A">
       <End Role="Users" EntitySet="Users" />
       <End Role="Graphs" EntitySet="Graphs" />
     </AssociationSet>

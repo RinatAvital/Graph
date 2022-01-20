@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using BL;
 using DAL;
+using BL.models;
 
 namespace API.Controllers
 {
@@ -18,15 +19,15 @@ namespace API.Controllers
             return BL.UserManager.getUser();
         }
 
-        // POST: api/Default
+        // POST: api/Default/PostSignUp
         public Users PostSignUp([FromBody]DtoUser user)
         {
             return BL.UserManager.signUp(user);
         }
-
-        // PUT: api/Default/5
-        public void Put(int id, [FromBody]string value)
+        // POST: api/Default/PostLogIn
+        public DtoUser PostLogIn([FromBody]userDetails user)
         {
+            return BL.UserManager.loginUser(user.UserName, user.Password);
         }
 
         // DELETE: api/Default/5
