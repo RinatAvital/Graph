@@ -89,12 +89,55 @@ namespace BL.models
             //Console.WriteLine("(" + Xkodkod + ", " + Ykodkod + ")");
 
             //חישוב נגזרת הפונקציה
-            string derivative = (a * (Convert.ToInt32(e.Parameters[0].Class.ToString()))).ToString();//נגזרת
-            derivative = derivative += "x " + e.Parameters[1].Value;
-            //Console.WriteLine("f(x) = " + strGraph);
-            Console.WriteLine("f'(x) = " + derivative);
-            Console.WriteLine();
+            //Equation nigzeret = new Equation();
+            //nigzeret.Parameters = new List<Parameter>();
+            //Parameter p = new Parameter();
+            //int m = 0;
+            //while (e.Parameters!=null)
+            //{
+            //    p.Value = e.Parameters[m].Value * e.Parameters[m].Class;
+            //    p.Operator = e.Parameters[m].Operator;
+            //    p.Class = e.Parameters[m].Class - 1;
+            //    nigzeret.Parameters.Add(p);
+
+
+            //}
+
+
+
+
+            //string derivative = (a * (Convert.ToInt32(e.Parameters[0].Class.ToString()))).ToString();//נגזרת
+            //derivative = derivative += "x " + e.Parameters[1].Value;
+            ////Console.WriteLine("f(x) = " + strGraph);
+            //Console.WriteLine("f'(x) = " + derivative);
+            //Console.WriteLine();
+
+
+
+
             return Points;
+        }
+
+
+        //חישוב נגזרת הפונקציה
+        public static Equation calc_nigzeret(Equation e)
+        {
+            
+            Equation nigzeret = new Equation();
+            nigzeret.Parameters = new List<Parameter>();
+            Parameter p = new Parameter();
+            int m = 0;
+            while (e.Parameters != null || e.Parameters[m].Class==0)
+            {
+                p.Value = e.Parameters[m].Value * e.Parameters[m].Class;
+                p.Operator = e.Parameters[m].Operator;
+                p.Class = e.Parameters[m].Class - 1;
+                nigzeret.Parameters.Add(p);
+                m++;
+            }
+            nigzeret.Class = nigzeret.Parameters[0].Class;
+            nigzeret.Count = m;
+            return nigzeret;
         }
 
 
