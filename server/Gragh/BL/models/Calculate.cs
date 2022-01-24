@@ -8,7 +8,7 @@ namespace BL.models
 {
     public class Calculate
     {
-        public static List<Point> Advancedculc_parameters(string str)
+        public static Equation Advancedculc_parameters(string str)
         {
             string strCopy = str;
             string strGraph = string.Join(" ", strCopy
@@ -55,7 +55,8 @@ namespace BL.models
             equation.Parameters = equation.Parameters.OrderByDescending(c => c.Class).ToList();
             equation.Class = equation.Parameters.Max(m => m.Class);
             equation.Count = count;
-            return print(equation);
+            return equation;
+            //return print(equation);
         }
 
         public static void calcOperator(Parameter p, string v)
