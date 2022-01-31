@@ -11,20 +11,20 @@ using BL.models;
 
 namespace API.Controllers
 {
-    public class DefaultController : ApiController
+    public class UserController : ApiController
     {
-        // GET: api/Default/GetAllUser
+        // GET: api/User/GetAllUser
         public List<DtoUser> GetAllUser()
         {
             return BL.UserManager.getUser();
         }
 
-        // POST: api/Default/PostSignUp
+        // POST: api/User/PostSignUp
         public Users PostSignUp([FromBody]DtoUser user)
         {
             return BL.UserManager.signUp(user);
         }
-        // POST: api/Default/PostLogIn
+        // POST: api/User/PostLogIn
         public DtoUser PostLogIn([FromBody]userDetails user)
         {
             return BL.UserManager.loginUser(user.UserName, user.Password);

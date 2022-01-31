@@ -19,23 +19,20 @@ namespace BL
 
         }
 
-        //public static List<Point> getOneGraph()
-        //{
-        //    List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
-        //    List<DtoGraph> g = DtoGraph.DTOtoList(graph);
-        //    List<Point> points = Calculate.Advancedculc_parameters(g[1].graphString);
-        //    return points;
-        //    return new DtoGraph(g, points);
-
-        //}
+        public static List<Point> getOneGraph()
+        {
+            List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
+            List<DtoGraph> g = DtoGraph.DTOtoList(graph);
+            Equation equation = Calculate.getEquationFromStr(g[1].graphString);
+            return Calculate.getPoint(equation);
+            //return new DtoGraph(g, points);
+        }
         public static Equation getNigzeret()
         {
             List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
             List<DtoGraph> g = DtoGraph.DTOtoList(graph);
-            Equation f = Calculate.Advancedculc_parameters(g[1].graphString);
+            Equation f = Calculate.getEquationFromStr(g[3].graphString);
             return Point.calc_nigzeret(f);
-           
-
         }
 
 

@@ -8,7 +8,7 @@ namespace BL.models
 {
     public class Calculate
     {
-        public static Equation Advancedculc_parameters(string str)
+        public static Equation getEquationFromStr(string str)
         {
             string strCopy = str;
             string strGraph = string.Join(" ", strCopy
@@ -16,6 +16,13 @@ namespace BL.models
                .Replace("+", " +") // add space to signs to keep them with their value
                .Replace("-", " -")
                .Split(' '));
+            //if(strGraph[0]==' ')
+            //{
+            //    //strGraph = strGraph.Skip(0).ToString();
+            //    List<char> strGraphList = new List<char>(strGraph);
+            //    strGraphList.RemoveAt(0);
+            //    strGraph = strGraphList.ToArray().ToString();
+            //}
 
             string[] s = strGraph.Split(' ');
             //בדיקת כמות האיברים בפונקציה
@@ -56,7 +63,10 @@ namespace BL.models
             equation.Class = equation.Parameters.Max(m => m.Class);
             equation.Count = count;
             return equation;
-            //return print(equation);
+        }
+        public static List<Point> getPoint(Equation equation)
+        {
+            return print(equation);
         }
 
         public static void calcOperator(Parameter p, string v)
@@ -64,10 +74,13 @@ namespace BL.models
             p.Operator = '+';
             if (v[0] == '-')
                 p.Operator = '-';
-            string s = v.Split('+', '-', '^', 'x').OrderByDescending(x => x.Length).ToArray()[0];
-            p.Value = Convert.ToDouble(s);
+            if (v[0] == 'x') p.Value = 1;
+            else
+            {
+                string s = v.Split('+', '-', '^', 'x').OrderByDescending(x => x.Length).ToArray()[0];
+                p.Value = Convert.ToDouble(s);
 
-
+            }
         }
 
         public static List<Point> print(Equation e)
