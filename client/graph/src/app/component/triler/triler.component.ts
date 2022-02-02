@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrilerComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    screen.getGrap().su
+  }
 
 
 
