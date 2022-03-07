@@ -374,3 +374,6 @@ C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\obj\Debug\API.csproj.CoreComp
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\obj\Debug\API.csproj.CopyComplete
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\obj\Debug\API.dll
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\obj\Debug\API.pdb
+C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Cors.dll
+C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Http.Cors.dll
+C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Http.Cors.xml

@@ -12,7 +12,11 @@ package model;
  */
 
 enum Company{
-MAZDA, TOYOTA,SHEVROLET,NISAN,AUDI,YONDI,FORD,HONDA 
+MAZDA(0), TOYOTA(50),SHEVROLET(100),NISAN(),AUDI(200),YONDI(),FORD(),HONDA(); 
+
+    private Company(int add) {
+        price+=add;
+    }
 }
 enum Color{
 WHITE, BLACK,PINK,GRAY,GRIN,BAG,BROUN,BLUE 
@@ -24,6 +28,7 @@ public class Car {
     private String model;
     private String shana;
     private Color color;
+    private double price;
     
 
     public Car() {

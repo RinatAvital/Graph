@@ -1,36 +1,16 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-
-<div class="content" role="main">
-
-
-  
-
-  
-
-  <h1>ברוכים הבאים</h1>
-
-  
- 
-
-
-
-</div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['graph']" routerLinkActive="router-link-active">Graph</a>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['sign-in']" routerLinkActive="router-link-active">Sign In</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['sign-up']" routerLinkActive="router-link-active">Sign Up</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['draw']" routerLinkActive="router-link-active">draw</a>
+  </li>
+</ul>
 
 <router-outlet></router-outlet>

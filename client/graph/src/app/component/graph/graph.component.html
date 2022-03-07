@@ -1,0 +1,12 @@
+
+<input type="button" value="הצגת גרפים" (click)="showGraph()">
+<p *ngFor="let g of graph">{{g.graphString}}</p>
+
+
+<!-- <input type="button" value="eval" (click)="eval()"> -->
+
+
+
+<input type="button" value="הצגת משוואה" (click)="getEquation()">
+<p *ngFor="let e of equation">{{e.Parameters[0].Value}}</p>
+

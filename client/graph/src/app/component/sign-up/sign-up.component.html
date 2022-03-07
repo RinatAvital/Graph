@@ -1,0 +1,24 @@
+
+<form  [formGroup]="signUpForm" >
+    <div class="mb-3">
+        <label class="form-text" for="fn">שם פרטי:</label>
+        <input formControlName="firstName" class="form-control" type="text" placeholder="ישראל" id="fn">
+    </div>
+    <div class="mb-3">
+        <label class="form-text" for="ln">שם משפחה</label>
+        <input formControlName="lastName" class="form-control" type="text" placeholder="ישראלי" id="ln">
+    </div>
+    <div class="mb-3">
+        <label class="form-text" for="un">שם משתמש</label>
+        <input formControlName="userName" class="form-control" type="text" placeholder="" id="un">
+    </div>
+    <div class="mb-3">
+        <label class="form-text" for="em">מייל</label>
+        <input formControlName="email" class="form-control" type="email" placeholder="name@gmail.com" id="em">
+    </div>
+    <div class="mb-3">
+        <label class="form-text" for="ps">סיסמה</label>
+        <input formControlName="password" class="form-control" type="password" placeholder="" id="ps">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="doSignUp()">שלח</button>
+</form>
