@@ -20,12 +20,12 @@ namespace API.Controllers
         }
 
         // POST: api/User/PostSignUp
-        public Users PostSignUp([FromBody]DtoUser user)
+        public Users PostSignUp(DtoUser user)
         {
             return BL.UserManager.signUp(user);
         }
         // POST: api/User/PostLogIn
-        public DtoUser PostLogIn([FromBody]userDetails user)
+        public DtoUser PostLogIn(userDetails user)
         {
             return BL.UserManager.loginUser(user.UserName, user.Password);
         }

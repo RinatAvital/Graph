@@ -377,3 +377,6 @@ C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\obj\Debug\API.pdb
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Cors.dll
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Http.Cors.dll
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Http.Cors.xml
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Cors.dll
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Http.Cors.dll
+C:\Users\student\Documents\GitHub\Graph\server\Gragh\API\bin\System.Web.Http.Cors.xml

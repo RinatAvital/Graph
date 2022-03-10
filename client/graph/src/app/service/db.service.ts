@@ -19,7 +19,7 @@ export class DbService {
   getAllEquation(){
     return this.http.get<Equation>('http://localhost:59111/api/Graph/GetNigzeret');
   }
-  newSignUp(user:User){
-    return this.http.get<Equation>('http://localhost:59111/api/User/PostSignUp');
+  newSignUp(user:User):Observable<User>{
+    return this.http.post<User>('http://localhost:59111/api/User/PostSignUp',user);
   }
 }

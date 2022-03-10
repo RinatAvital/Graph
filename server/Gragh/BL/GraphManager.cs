@@ -31,7 +31,7 @@ namespace BL
         {
             List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
             List<DtoGraph> g = DtoGraph.DTOtoList(graph);
-            Equation f = Calculate.getEquationFromStr(g[4].graphString);
+            Equation f = Calculate.getEquationFromStr(g[1].graphString);
             return Point.calc_nigzeret(f);
         }
 

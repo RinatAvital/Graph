@@ -32,14 +32,15 @@ export class SignUpComponent implements OnInit {
   doSignUp() {
     console.log(this.signUpForm)
     const user: User = {
-      Code:0,
+      code:5,
       firstName: this.signUpForm.controls.fn.Value,
       lastName: this.signUpForm.controls.ln.Value,
       userName: this.signUpForm.controls.un.Value,
       email: this.signUpForm.controls.em.Value,
       password: this.signUpForm.controls.ps.Value
     }
-
+    console.log(user)
+    
     this.db.newSignUp(user).subscribe(res=>{
       console.log(res);
       if(res==null)
