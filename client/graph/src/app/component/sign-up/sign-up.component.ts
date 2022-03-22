@@ -12,7 +12,6 @@ export class SignUpComponent implements OnInit {
 
   signUpForm: any;
 
-
   constructor(private db: DbService) { }
 
   ngOnInit(): void {

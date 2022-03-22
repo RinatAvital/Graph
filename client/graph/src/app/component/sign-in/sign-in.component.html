@@ -4,5 +4,7 @@
     <input formControlName="firstName" class="form-control" type="text" placeholder="ישראל" id="fn">
 
     <label class="form-text" for="ps">סיסמה</label>
-    <input class="form-control" type="password" placeholder="" id="ps">
+    <input formControlName="password" class="form-control" type="password" placeholder="" id="ps">
+
+    <button type="submit" class="btn btn-primary" (click)="doSignIn()">שלח</button>
 </form>

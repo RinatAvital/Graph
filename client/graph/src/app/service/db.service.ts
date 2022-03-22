@@ -4,6 +4,7 @@ import { Graph } from '../models/Graph';
 import { Observable } from 'rxjs';
 import { Equation } from '../models/Equation';
 import { User } from '../models/User';
+import { UserSignIn } from '../models/UserSignIn';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +23,8 @@ export class DbService {
   newSignUp(user:User):Observable<User>{
     return this.http.post<User>('http://localhost:59111/api/User/PostSignUp',user);
   }
+  newSignIn(user:UserSignIn):Observable<User>{
+    return this.http.post<User>('http://localhost:59111/api/User/PostSignIn',user);
+  }
+  
 }
