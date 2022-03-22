@@ -21,14 +21,13 @@ import * as echarts from 'echarts';
 export class DrawComponent implements OnInit {
 
 
-  equation: Equation[] = [];
+  equation: Equation;
   myGraph: any;
   myChart: any;
-  res: any
+  resE: any;
   constructor(private dbService: DbService) { }
 
   ngOnInit(): void {
-
     var dom = document.getElementById("container")!;
     var myChart = echarts.init(dom);
     var app = {};
@@ -37,29 +36,31 @@ export class DrawComponent implements OnInit {
 
     this.dbService.getAllEquation().subscribe(res => {
       console.log(res);
-      this.equation[0] = res;
-      this.res = res;
-      console.log(res);
+      debugger;
+      this.resE = res;
+      this.equation = this.resE;
+      console.log(this.equation);
     })
 
-
+    // let eq=this.equation.Parameters;
     function func(x: number) {
       x /= 10;
-      //return Math.sin(x) * Math.cos(x * 2 + 1) * Math.sin(x * 3 + 2) * 50;
 
-      //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-      let str = "";
 
-      let i = 0;
-      debugger;
-      for (let p of this.equation[0].Parameters) {
-        let v = p.Value;
-        let c = p.class;
-        let o = p.Operator;
-        str += "o*v*x^c ";
-        i++;
-      }
-      return eval(str);
+      // //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+      // let str = "";
+
+      // let i = 0;
+      // debugger;
+      // for (let p of eq) {
+      //   let v = p.Value;
+      //   let c = p.class;
+      //   let o = p.Operator;
+      //   str += "o*v*x^c ";
+      //   i++;
+      // }
+      // return eval(str);
+      return x*x*x;
     }
     function generateData() {
       let data = [];
