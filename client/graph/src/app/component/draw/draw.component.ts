@@ -24,9 +24,9 @@ export class DrawComponent implements OnInit {
   equation: Equation[] = [];
   myGraph: any;
   myChart: any;
-
-  constructor(private dbService: DbService) { }
   res: any
+  constructor(private dbService: DbService) { }
+
   ngOnInit(): void {
 
     var dom = document.getElementById("container")!;
@@ -35,11 +35,31 @@ export class DrawComponent implements OnInit {
 
     var option;
 
+    this.dbService.getAllEquation().subscribe(res => {
+      console.log(res);
+      this.equation[0] = res;
+      this.res = res;
+      console.log(res);
+    })
 
 
-    function func(x:number) {
+    function func(x: number) {
       x /= 10;
-      return Math.sin(x) * Math.cos(x * 2 + 1) * Math.sin(x * 3 + 2) * 50;
+      //return Math.sin(x) * Math.cos(x * 2 + 1) * Math.sin(x * 3 + 2) * 50;
+
+      //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+      let str = "";
+
+      let i = 0;
+      debugger;
+      for (let p of this.equation[0].Parameters) {
+        let v = p.Value;
+        let c = p.class;
+        let o = p.Operator;
+        str += "o*v*x^c ";
+        i++;
+      }
+      return eval(str);
     }
     function generateData() {
       let data = [];
@@ -109,67 +129,46 @@ export class DrawComponent implements OnInit {
     }
 
 
-
-
-
-
-    //   this.dbService.getAllEquation().subscribe(res => {
-    //     console.log(res);
-    //     this.equation[0] = res;
-    //     this.res=res;
-    //     console.log(res);
-    //   })
-
-    //   debugger;
-    //   let myGraph = new CanvasGraph({
-    //     canvasId: "myCanvas",
-    //     minX: -10,
-    //     minY: -10,
-    //     maxX: 10,
-    //     maxY: 10,
-    //     unitsPerTick: 1
-    //   });
-
-    //   myGraph.drawEquation((x: number) => {
-
-    //     //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-    //     let str = "";
-
-    //     let i=0;
     //     debugger;
-    //     for(let p of this.equation[0].Parameters) {
-    //       let v = p.Value;
-    //       let c = p.class;
-    //       let o = p.Operator;
-    //       str += "o*v*x^c ";
-    //       i++;
-    //     }
-    //     return eval(str);
+    //     let myGraph = new CanvasGraph({
+    //       canvasId: "myCanvas",
+    //       minX: -10,
+    //       minY: -10,
+    //       maxX: 10,
+    //       maxY: 10,
+    //       unitsPerTick: 1
+    //     });
 
-    //   }, "green", 3);
+    //     myGraph.drawEquation((x: number) => {
 
-    //   myGraph.drawEquation(function (x: number) {
-    //     return eval('-x * x * x + 2');
-    //   }, "blue", 3);
+    //       //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+    //       let str = "";
 
-    //   myGraph.drawEquation(function (x: number) {
-    //     return -2*(x*x)+8
-    //   }, "red", 3);
-    // }
+    //       let i = 0;
+    //       debugger;
+    //       for (let p of this.equation[0].Parameters) {
+    //         let v = p.Value;
+    //         let c = p.class;
+    //         let o = p.Operator;
+    //         str += "o*v*x^c ";
+    //         i++;
+    //       }
+    //       return eval(str);
 
+    //     }, "green", 3);
 
+    //     myGraph.drawEquation(function (x: number) {
+    //       return eval('-x * x * x + 2');
+    //     }, "blue", 3);
 
-
-
-
-
-
-
-
+    //     myGraph.drawEquation(function (x: number) {
+    //       return -2 * (x * x) + 8
+    //     }, "red", 3);
+    //   }
 
   }
 
-  
+
 
 
   value = "";

@@ -25,9 +25,9 @@ namespace API.Controllers
             return BL.UserManager.signUp(user);
         }
         // POST: api/User/PostLogIn
-        public DtoUser PostLogIn(userDetails user)
+        public DtoUser PostSignIn([FromBody] userDetails user)
         {
-            return BL.UserManager.loginUser(user.UserName, user.Password);
+            return BL.UserManager.signIn(user.UserName, user.Password);
         }
 
         // DELETE: api/Default/5

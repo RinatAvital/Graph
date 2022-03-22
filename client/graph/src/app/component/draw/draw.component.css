@@ -6,9 +6,9 @@ input {
   border: none;
   box-sizing: border-box;
 }
-body{
+#container{
   height: 100%;
-  width: 700;
+  width: 100%;
   margin: 0;
 }
   

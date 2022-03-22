@@ -23,7 +23,7 @@ namespace BL
             db.Execute<Users>(u, DBConection.ExecuteActions.Insert);
             return u;
         }
-        public static DtoUser loginUser(string userName, string password)
+        public static DtoUser signIn(string userName, string password)
         {
             Users user = db.GetDbSet<Users>().FirstOrDefault(u => u.userName == userName && u.password == password);
             if (user == null)
