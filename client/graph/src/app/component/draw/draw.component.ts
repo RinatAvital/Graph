@@ -25,8 +25,11 @@ export class DrawComponent implements OnInit {
   myGraph: any;
   myChart: any;
   resE: any;
-  constructor(private dbService: DbService) { }
 
+
+
+  constructor(private dbService: DbService) { }
+  res: any
   ngOnInit(): void {
     var dom = document.getElementById("container")!;
     var myChart = echarts.init(dom);
@@ -42,9 +45,11 @@ export class DrawComponent implements OnInit {
       console.log(this.equation);
     })
 
+
     // let eq=this.equation.Parameters;
     function func(x: number) {
       x /= 10;
+
 
 
       //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
@@ -62,6 +67,9 @@ export class DrawComponent implements OnInit {
       }
       return eval(str);
       //return x*x*x;
+
+      return x*x-4*x+2;
+
     }
     function generateData() {
       let data = [];
@@ -131,63 +139,73 @@ export class DrawComponent implements OnInit {
     }
 
 
-    //     debugger;
-    //     let myGraph = new CanvasGraph({
-    //       canvasId: "myCanvas",
-    //       minX: -10,
-    //       minY: -10,
-    //       maxX: 10,
-    //       maxY: 10,
-    //       unitsPerTick: 1
-    //     });
 
-    //     myGraph.drawEquation((x: number) => {
 
-    //       //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-    //       let str = "";
 
-    //       let i = 0;
-    //       debugger;
-    //       for (let p of this.equation[0].Parameters) {
-    //         let v = p.Value;
-    //         let c = p.class;
-    //         let o = p.Operator;
-    //         str += "o*v*x^c ";
-    //         i++;
-    //       }
-    //       return eval(str);
 
-    //     }, "green", 3);
+    this.dbService.getAllEquation().subscribe(res => {
+      console.log(res);
+      this.equation = res;
+      this.res = res;
+      console.log(res);
+    })
 
-    //     myGraph.drawEquation(function (x: number) {
-    //       return eval('-x * x * x + 2');
-    //     }, "blue", 3);
+    // debugger;
+    // let myGraph = new CanvasGraph({
+    //   canvasId: "myCanvas",
+    //   minX: -10,
+    //   minY: -10,
+    //   maxX: 10,
+    //   maxY: 10,
+    //   unitsPerTick: 1
+    // });
 
-    //     myGraph.drawEquation(function (x: number) {
-    //       return -2 * (x * x) + 8
-    //     }, "red", 3);
-    //   }
+  //   myGraph.drawEquation((x: number) => {
+
+  //     //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+  //     let str = "";
+
+  //     let i = 0;
+  //     debugger;
+  //     for (let p of this.equation.Parameters) {
+  //       let v = p.Value;
+  //       let c = p.class;
+  //       let o = p.Operator;
+  //       str += "o*v*x^c ";
+  //       i++;
+  //     }
+  //     return eval(str);
+
+  //   }, "green", 3);
+
+  //   myGraph.drawEquation(function (x: number) {
+  //     return eval('-x * x * x + 2');
+  //   }, "blue", 3);
+
+  //   myGraph.drawEquation(function (x: number) {
+  //     return -2 * (x * x) + 8
+  //   }, "red", 3);
+
 
   }
 
 
 
-
   value = "";
   keyboard: Keyboard;
-
+  
   ngAfterViewInit() {
     this.keyboard = new Keyboard({
       onChange: input => this.onChange(input),
       onKeyPress: (button: any) => this.onKeyPress(button)
     });
   }
-
+  
   onChange = (input: string) => {
     this.value = input;
     console.log("Input changed", input);
   };
-
+  
   onKeyPress = (button: string) => {
     console.log("Button pressed", button);
     /**
@@ -195,20 +213,33 @@ export class DrawComponent implements OnInit {
      */
     if (button === "{shift}" || button === "{lock}") this.handleShift();
   };
-
+  
   onInputChange = (event: any) => {
     this.keyboard.setInput(event.target.value);
   };
-
+  
   handleShift = () => {
     let currentLayout = this.keyboard.options.layoutName;
     let shiftToggle = currentLayout === "default" ? "shift" : "default";
-
+  
     this.keyboard.setOptions({
       layoutName: shiftToggle
     });
   };
+  
+  
+
+
+
+
 
 
 
 }
+
+
+
+
+
+
+
