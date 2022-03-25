@@ -47,20 +47,21 @@ export class DrawComponent implements OnInit {
       x /= 10;
 
 
-      // //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-      // let str = "";
+      //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+      //const str = "(+3)*x*x -5"
+      let str = "";
 
-      // let i = 0;
-      // debugger;
-      // for (let p of eq) {
-      //   let v = p.Value;
-      //   let c = p.class;
-      //   let o = p.Operator;
-      //   str += "o*v*x^c ";
-      //   i++;
-      // }
-      // return eval(str);
-      return x*x*x;
+      let i = 0;
+      debugger;
+      for (let p of this.equation.Parameters) {
+        let v = p.Value;
+        let c = p.class;
+        let o = p.Operator;
+        str += "o*v*x^c ";
+        i++;
+      }
+      return eval(str);
+      //return x*x*x;
     }
     function generateData() {
       let data = [];

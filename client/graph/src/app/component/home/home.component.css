@@ -1,0 +1,12 @@
+#titel{
+    height: 12vh;
+    text-align: center;
+    background-color: darkgray;
+}
+
+#enter{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: stretch;
+}

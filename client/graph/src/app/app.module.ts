@@ -14,7 +14,8 @@ import { CommonModule }   from '@angular/common';
 
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { DemeComponent } from './component/deme/deme.component';
+import { HomeComponent } from './component/home/home.component';
+
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { DemeComponent } from './component/deme/deme.component';
     UserComponent,
     SignUpComponent,
     SignInComponent,
-    DemeComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,

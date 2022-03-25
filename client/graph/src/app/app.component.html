@@ -1,7 +1,11 @@
 
 <ul class="nav nav-tabs">
   <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['home']" routerLinkActive="router-link-active">home</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link active" [routerLink]="['graph']" routerLinkActive="router-link-active">Graph</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link" [routerLink]="['sign-in']" routerLinkActive="router-link-active">Sign In</a>
   </li>
@@ -13,12 +17,5 @@
   </li>
 </ul>
 
-
-<!-- <div style="text-align:center">
-	<input (input)="onInputChange($event)" class="input" value={{value}} placeholder="Tap on the virtual keyboard to start" />
-	<div class="simple-keyboard"></div>
-</div>
-<input class="input" />
-<div class="simple-keyboard"></div> -->
 
 <router-outlet></router-outlet>
