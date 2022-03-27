@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\1\עבודות סמינר\הנדסת תוכנה\irox\irox\main.cpp(38,5): error C2084: function 'int main(void)' already has a body
+C:\Users\1\עבודות סמינר\הנדסת תוכנה\irox\irox\main.cpp(19): message : see previous definition of 'main'
