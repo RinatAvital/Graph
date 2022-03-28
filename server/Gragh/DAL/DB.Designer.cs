@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\1\Documents\GitHub\Graph\server\Gragh\DAL\DB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\student\Documents\GitHub\Graph\server\Gragh\DAL\DB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
