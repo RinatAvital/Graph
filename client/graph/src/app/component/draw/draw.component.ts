@@ -45,11 +45,10 @@ export class DrawComponent implements OnInit {
     })
 
     const data = [
-      [40, -10],
-      [-30, -5],
-      [-76.5, 20],
-      [-63.5, 40],
-      [-22.1, 50]
+      [0, 0],
+      [1, 1],
+      [5, 5],
+      
     ];
     debugger;
     option = {
@@ -60,6 +59,7 @@ export class DrawComponent implements OnInit {
         right: 40,
         bottom: 50
       },
+      hoverLayerThreshold: 3000,
       tooltip: {
         triggerOn: 'none',
         formatter: function (params) {
@@ -115,76 +115,94 @@ export class DrawComponent implements OnInit {
           type: 'line',
           showSymbol: false,
           clip: true,
+          symbolSize: 30,
           data: this.generateData()
         }
       ]
     };
 
+    var zr = myChart.getZr();
+    zr.on('click', function (params) {
+      var pointInPixel = [params.offsetX, params.offsetY];
+      var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
+      if (myChart.containPixel('grid', pointInPixel)) {
+        data.push(pointInGrid);
+        myChart.setOption({
+          series: [
+            {
+              id: 'a',
+              data: data
+            }
+          ]
+        });
+      }
+    });
+    zr.on('mousemove', function (params) {
+      var pointInPixel = [params.offsetX, params.offsetY];
+      zr.setCursorStyle(
+        myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
+      );
+    });
+    debugger;
     if (option && typeof option === 'object') {
       myChart.setOption(option);
     }
-    var zr = myChart.getZr();
-    zr.on('mousemove', function (params) {
-      var pointInPixel = [params.offsetX, params.offsetY];
-      // zr.setCursorStyle(
-      //   myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
-      // );
-    });
-    
 
 
-      // debugger;
-      // let myGraph = new CanvasGraph({
-      //   canvasId: "myCanvas",
-      //   minX: -10,
-      //   minY: -10,
-      //   maxX: 10,
-      //   maxY: 10,
-      //   unitsPerTick: 1
-      // });
-
-      //   myGraph.drawEquation((x: number) => {
-
-      //     //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-      //     let str = "";
-
-      //     let i = 0;
-      //     debugger;
-      //     for (let p of this.equation.Parameters) {
-      //       let v = p.Value;
-      //       let c = p.class;
-      //       let o = p.Operator;
-      //       str += "o*v*x^c ";
-      //       i++;
-      //     }
-      //     return eval(str);
-
-      //   }, "green", 3);
-
-      //   myGraph.drawEquation(function (x: number) {
-      //     return eval('-x * x * x + 2');
-      //   }, "blue", 3);
-
-      //   myGraph.drawEquation(function (x: number) {
-      //     return -2 * (x * x) + 8
-      //   }, "red", 3);
 
 
-      // function showTooltip(dataIndex) {
-      //   myChart.dispatchAction({
-      //     type: 'showTip',
-      //     seriesIndex: 0,
-      //     dataIndex: dataIndex
-      //   });
-      // }
+    // debugger;
+    // let myGraph = new CanvasGraph({
+    //   canvasId: "myCanvas",
+    //   minX: -10,
+    //   minY: -10,
+    //   maxX: 10,
+    //   maxY: 10,
+    //   unitsPerTick: 1
+    // });
 
-    }
+    //   myGraph.drawEquation((x: number) => {
+
+    //     //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+    //     let str = "";
+
+    //     let i = 0;
+    //     debugger;
+    //     for (let p of this.equation.Parameters) {
+    //       let v = p.Value;
+    //       let c = p.class;
+    //       let o = p.Operator;
+    //       str += "o*v*x^c ";
+    //       i++;
+    //     }
+    //     return eval(str);
+
+    //   }, "green", 3);
+
+    //   myGraph.drawEquation(function (x: number) {
+    //     return eval('-x * x * x + 2');
+    //   }, "blue", 3);
+
+    //   myGraph.drawEquation(function (x: number) {
+    //     return -2 * (x * x) + 8
+    //   }, "red", 3);
+
+
+    // function showTooltip(dataIndex) {
+    //   myChart.dispatchAction({
+    //     type: 'showTip',
+    //     seriesIndex: 0,
+    //     dataIndex: dataIndex
+    //   });
+    // }
+
+  }
 
 
   func(x: number) {
-      x /= 10;
-    //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-    //const str = "(+3)*x*x -5"
+    x /= 10;
+    // const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+    // const str = "(+3)*x*x -5"
     // let str = "";
 
     // let i = 0;
