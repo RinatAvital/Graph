@@ -17,7 +17,6 @@ C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\E
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.pdb
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\DAL.dll.config
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\bin\Debug\EntityFramework.xml
-C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.dll
@@ -46,3 +45,4 @@ C:\Users\1\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CoreComp
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.dll
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

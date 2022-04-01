@@ -35,8 +35,11 @@ import { HomeComponent } from './component/home/home.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    // NgxEchartsModule.forRoot({
+    //   echarts
+    // }),
     NgxEchartsModule.forRoot({
-      echarts
+      echarts: () => import('echarts')
     })
   ],
   providers: [],

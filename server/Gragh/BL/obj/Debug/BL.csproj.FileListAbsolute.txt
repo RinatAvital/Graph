@@ -27,7 +27,6 @@ C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DA
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\DTO.pdb
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\EntityFramework.xml
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csprojAssemblyReference.cache
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.dll
@@ -66,3 +65,4 @@ C:\Users\1\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.CoreCompil
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.dll
 C:\Users\1\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.pdb
+C:\Users\רינת אביטל\Documents\GitHub\Graph\server\Gragh\BL\obj\Debug\BL.csproj.AssemblyReference.cache

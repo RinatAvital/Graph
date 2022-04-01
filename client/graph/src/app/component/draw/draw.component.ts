@@ -10,9 +10,6 @@ import * as echarts from 'echarts';
 
 
 
-
-
-
 @Component({
   selector: 'app-draw',
   templateUrl: './draw.component.html',
@@ -122,21 +119,7 @@ export class DrawComponent implements OnInit {
     };
 
     var zr = myChart.getZr();
-    zr.on('click', function (params) {
-      var pointInPixel = [params.offsetX, params.offsetY];
-      var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
-      if (myChart.containPixel('grid', pointInPixel)) {
-        data.push(pointInGrid);
-        myChart.setOption({
-          series: [
-            {
-              id: 'a',
-              data: data
-            }
-          ]
-        });
-      }
-    });
+    
     zr.on('mousemove', function (params) {
       var pointInPixel = [params.offsetX, params.offsetY];
       zr.setCursorStyle(
@@ -203,18 +186,18 @@ export class DrawComponent implements OnInit {
     x /= 10;
     // const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
     // const str = "(+3)*x*x -5"
-    // let str = "";
+    let str = "";
 
-    // let i = 0;
-    // for (let p of this.equation.Parameters) {
-    //   let v = p.Value;
-    //   let c = p.class;
-    //   let o = p.Operator;
-    //   str += "o*v*x^c ";
-    //   i++;
-    // }
-    // return eval(str);
-    return x * x * x;
+    let i = 0;
+    for (let p of this.equation.Parameters) {
+      let v = p.Value;
+      let c = p.class;
+      let o = p.Operator;
+      str += "o*v*x^c ";
+      i++;
+    }
+    return eval(str);
+    //return x * x * x;
   }
   func2(x: number) {
     x /= 10;
