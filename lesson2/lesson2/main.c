@@ -39,7 +39,7 @@ void main()
 	printf(" value at address of fx= %f\n", *pt2);
 	printf(" value at address of cht= %c\n\n", *pt3);
 
-
+	}
 
 
 	//--------------------------------8
@@ -78,98 +78,108 @@ void main()
 		printf("\n\n");
 		return 0;
 	}
-
-
-	//-------------------------------14
+         //-------------------------------14
+	void main()
+	{
 	//int arr[] = { 25,45,89,15,15,82 };
 
-	int* a, i, j, tmp, n;
-	printf("\n\n Pointer : Sort an array using pointer :\n");
-	printf("--------------------------------------------\n");
+		int* a, i, j, tmp, n;
+		printf("\n\n Pointer : Sort an array using pointer :\n");
+		printf("--------------------------------------------\n");
 
-	printf(" Input the number of elements to store in the array : ");
-	scanf("%d", &n);
+		printf(" Input the number of elements to store in the array : ");
+		scanf("%d", &n);
 
-	printf(" Input %d number of elements in the array : \n", n);
-	for (i = 0; i < n; i++)
-	{
-		printf(" element - %d : ", i + 1);
-		scanf("%d", a + i);
-	}
-	for (i = 0; i < n; i++)
-	{
-		for (j = i + 1; j < n; j++)
+		printf(" Input %d number of elements in the array : \n", n);
+		for (i = 0; i < n; i++)
 		{
-			if (*(a + i) > *(a + j))
+			printf(" element - %d : ", i + 1);
+			scanf("%d", a + i);
+		}
+		for (i = 0; i < n; i++)
+		{
+			for (j = i + 1; j < n; j++)
 			{
-				tmp = *(a + i);
-				*(a + i) = *(a + j);
-				*(a + j) = tmp;
+				if (*(a + i) > *(a + j))
+				{
+					tmp = *(a + i);
+					*(a + i) = *(a + j);
+					*(a + j) = tmp;
+				}
 			}
 		}
+		printf("\n The elements in the array after sorting : \n");
+		for (i = 0; i < n; i++)
+		{
+			printf(" element - %d : %d \n", i + 1, *(a + i));
+		}
+		printf("\n");
 	}
-	printf("\n The elements in the array after sorting : \n");
-	for (i = 0; i < n; i++)
-	{
-		printf(" element - %d : %d \n", i + 1, *(a + i));
-	}
-	printf("\n");
+	
+	
 
 	//----------------------------17
-
+	void main()
+	{
 	int n, i, arr1[15];
-	int* pt;
-	printf("\n\n Pointer : Print the elements of an array in reverse order :\n");
-	printf("----------------------------------------------------------------\n");
+		int* pt;
+		printf("\n\n Pointer : Print the elements of an array in reverse order :\n");
+		printf("----------------------------------------------------------------\n");
 
-	printf(" Input the number of elements to store in the array (max 15) : ");
-	scanf("%d", &n);
-	pt = &arr1[0];  // pt stores the address of base array arr1 
-	printf(" Input %d number of elements in the array : \n", n);
-	for (i = 0; i < n; i++)
-	{
-		printf(" element - %d : ", i + 1);
-		scanf("%d", pt);//accept the address of the value
-		pt++;
+		printf(" Input the number of elements to store in the array (max 15) : ");
+		scanf("%d", &n);
+		pt = &arr1[0];  // pt stores the address of base array arr1 
+		printf(" Input %d number of elements in the array : \n", n);
+		for (i = 0; i < n; i++)
+		{
+			printf(" element - %d : ", i + 1);
+			scanf("%d", pt);//accept the address of the value
+			pt++;
+		}
+
+		pt = &arr1[n - 1];
+
+		printf("\n The elements of array in reverse order are :");
+
+		for (i = n; i > 0; i--)
+		{
+			printf("\n element - %d : %d  ", i, *pt);
+			pt--;
+		}
+		printf("\n\n");
 	}
-
-	pt = &arr1[n - 1];
-
-	printf("\n The elements of array in reverse order are :");
-
-	for (i = n; i > 0; i--)
-	{
-		printf("\n element - %d : %d  ", i, *pt);
-		pt--;
-	}
-	printf("\n\n");
+	
 
 	//-----------------------------22
 
-
-	char str1[50];
-	char revstr[50];
-	char* stptr = str1;
-	char* rvptr = revstr;
-	int i = -1;
-	printf("\n\n Pointer : Print a string in reverse order :\n");
-	printf("------------------------------------------------\n");
-	printf(" Input a string : ");
-	scanf("%s", str1);
-	while (*stptr)
+	void main() 
 	{
-		stptr++;
-		i++;
+		char str1[50];
+		char revstr[50];
+		char* stptr = str1;
+		char* rvptr = revstr;
+		int i = -1;
+		printf("\n\n Pointer : Print a string in reverse order :\n");
+		printf("------------------------------------------------\n");
+		printf(" Input a string : ");
+		scanf("%s", str1);
+		while (*stptr)
+		{
+			stptr++;
+			i++;
+		}
+		while (i >= 0)
+		{
+			stptr--;
+			*rvptr = *stptr;
+			rvptr++;
+			--i;
+		}
+		*rvptr = '\0';
+		printf(" Reverse of the string is : %s\n\n", revstr);
+		return 0;
 	}
-	while (i >= 0)
-	{
-		stptr--;
-		*rvptr = *stptr;
-		rvptr++;
-		--i;
-	}
-	*rvptr = '\0';
-	printf(" Reverse of the string is : %s\n\n", revstr);
-	return 0;
 
-}
+	
+
+
