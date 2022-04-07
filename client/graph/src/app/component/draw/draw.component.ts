@@ -33,106 +33,200 @@ export class DrawComponent implements OnInit {
     var app = {};
     var option;
 
+    this.dbService.getOneEquation().subscribe(res => {
+      console.log("getAllEquation!");
 
-    this.dbService.getAllEquation().subscribe(res => {
       console.log(res);
       this.equation = res;
       this.res = res;
       console.log(this.equation);
-    })
 
-    const data = [
-      [0, 0],
-      [1, 1],
-      [5, 5],
-      
-    ];
-    debugger;
-    option = {
-      animation: false,
-      grid: {
-        top: 40,
-        left: 50,
-        right: 40,
-        bottom: 50
-      },
-      hoverLayerThreshold: 3000,
-      tooltip: {
-        triggerOn: 'none',
-        formatter: function (params) {
-          return (
-            'X: ' +
-            params.data[0].toFixed(2) +
-            '<br>Y: ' +
-            params.data[1].toFixed(2)
-          );
-        }
-      },
-      xAxis: {
-        name: 'x',
-        minorTick: {
-          show: true
+
+      const data = [
+        [0, 0],
+        [1, 1],
+        [5, 5],
+  
+      ];
+
+      option = {
+        animation: false,
+        grid: {
+          top: 40,
+          left: 50,
+          right: 40,
+          bottom: 50
         },
-        minorSplitLine: {
-          show: true
-        }
-      },
-      yAxis: {
-        name: 'y',
-        min: -100,
-        max: 100,
-        minorTick: {
-          show: true
+        hoverLayerThreshold: 3000,
+        tooltip: {
+          triggerOn: 'none',
+          formatter: function (params) {
+            return (
+              'X: ' +
+              params.data[0].toFixed(2) +
+              '<br>Y: ' +
+              params.data[1].toFixed(2)
+            );
+          }
         },
-        minorSplitLine: {
-          show: true
-        }
-      },
-      dataZoom: [
-        {
-          show: true,
-          type: 'inside',
-          filterMode: 'none',
-          xAxisIndex: [0],
-          startValue: -20,
-          endValue: 20
+        xAxis: {
+          name: 'x',
+          minorTick: {
+            show: true
+          },
+          minorSplitLine: {
+            show: true
+          }
         },
-        {
-          show: true,
-          type: 'inside',
-          filterMode: 'none',
-          yAxisIndex: [0],
-          startValue: -20,
-          endValue: 20
-        }
-      ],
-      series: [
-        {
-          id: 'a',
-          type: 'line',
-          showSymbol: false,
-          clip: true,
-          symbolSize: 30,
-          data: this.generateData()
-        }
-      ]
-    };
+        yAxis: {
+          name: 'y',
+          min: -100,
+          max: 100,
+          minorTick: {
+            show: true
+          },
+          minorSplitLine: {
+            show: true
+          }
+        },
+        dataZoom: [
+          {
+            show: true,
+            type: 'inside',
+            filterMode: 'none',
+            xAxisIndex: [0],
+            startValue: -20,
+            endValue: 20
+          },
+          {
+            show: true,
+            type: 'inside',
+            filterMode: 'none',
+            yAxisIndex: [0],
+            startValue: -20,
+            endValue: 20
+          }
+        ],
+        series: [
+          {
+            id: 'a',
+            type: 'line',
+            showSymbol: false,
+            clip: true,
+            symbolSize: 30,
+            data: this.generateData()
+          }
+        ]
+      };
+  
+      // var zr = myChart.getZr();
+  
+      // zr.on('mousemove', function (params) {
+      //   var pointInPixel = [params.offsetX, params.offsetY];
+      //   zr.setCursorStyle(
+      //     myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
+      //   );
+      // });
+  
+      // debugger;
+      if (option && typeof option === 'object') {
+        myChart.setOption(option);
+      }
+    },
+      err => {
+        console.log("error: " + err.message);
+      })
 
-    var zr = myChart.getZr();
-    
-    zr.on('mousemove', function (params) {
-      var pointInPixel = [params.offsetX, params.offsetY];
-      zr.setCursorStyle(
-        myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
-      );
-    });
-    debugger;
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+    // const data = [
+    //   [0, 0],
+    //   [1, 1],
+    //   [5, 5],
 
+    // ];
+    // debugger;
+    // option = {
+    //   animation: false,
+    //   grid: {
+    //     top: 40,
+    //     left: 50,
+    //     right: 40,
+    //     bottom: 50
+    //   },
+    //   hoverLayerThreshold: 3000,
+    //   tooltip: {
+    //     triggerOn: 'none',
+    //     formatter: function (params) {
+    //       return (
+    //         'X: ' +
+    //         params.data[0].toFixed(2) +
+    //         '<br>Y: ' +
+    //         params.data[1].toFixed(2)
+    //       );
+    //     }
+    //   },
+    //   xAxis: {
+    //     name: 'x',
+    //     minorTick: {
+    //       show: true
+    //     },
+    //     minorSplitLine: {
+    //       show: true
+    //     }
+    //   },
+    //   yAxis: {
+    //     name: 'y',
+    //     min: -100,
+    //     max: 100,
+    //     minorTick: {
+    //       show: true
+    //     },
+    //     minorSplitLine: {
+    //       show: true
+    //     }
+    //   },
+    //   dataZoom: [
+    //     {
+    //       show: true,
+    //       type: 'inside',
+    //       filterMode: 'none',
+    //       xAxisIndex: [0],
+    //       startValue: -20,
+    //       endValue: 20
+    //     },
+    //     {
+    //       show: true,
+    //       type: 'inside',
+    //       filterMode: 'none',
+    //       yAxisIndex: [0],
+    //       startValue: -20,
+    //       endValue: 20
+    //     }
+    //   ],
+    //   series: [
+    //     {
+    //       id: 'a',
+    //       type: 'line',
+    //       showSymbol: false,
+    //       clip: true,
+    //       symbolSize: 30,
+    //       data: this.generateData()
+    //     }
+    //   ]
+    // };
 
+    // // var zr = myChart.getZr();
 
+    // // zr.on('mousemove', function (params) {
+    // //   var pointInPixel = [params.offsetX, params.offsetY];
+    // //   zr.setCursorStyle(
+    // //     myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
+    // //   );
+    // // });
+
+    // // debugger;
+    // if (option && typeof option === 'object') {
+    //   myChart.setOption(option);
+    // }
 
     // debugger;
     // let myGraph = new CanvasGraph({
@@ -183,34 +277,48 @@ export class DrawComponent implements OnInit {
 
 
   func(x: number) {
+
     x /= 10;
     // const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
     // const str = "(+3)*x*x -5"
     let str = "";
-
+    let s = "";
     let i = 0;
+    // // let X= "";
+    // // let xx=`${x}`
+
+    
     for (let p of this.equation.Parameters) {
       let v = p.Value;
-      let c = p.class;
+      let c = p.Class;
       let o = p.Operator;
-      str += "o*v*x^c ";
+      let X="";
+      let xx="";
+      for (let i = 0; i < c; i++) {
+        X = `*${x}`;
+        xx += X;
+      }
+      s = `${o}${v}${xx} `;
+      str += s;
+      console.log(str);
       i++;
     }
     return eval(str);
+    return eval("+2*x*x -5*x +7");
     //return x * x * x;
   }
-  func2(x: number) {
-    x /= 10;
-    return x + 1;
-  }
+  // func2(x: number) {
+  //   x /= 10;
+  //   return x + 1;
+  // }
   generateData() {
     let data: any[] = [];
     for (let i = -200; i <= 200; i += 0.1) {
       data.push([i, this.func(i)]);
     }
-    for (let i = -200; i <= 200; i += 0.1) {
-      data.push([i, this.func2(i)]);
-    }
+    // for (let i = -200; i <= 200; i += 0.1) {
+    //   data.push([i, this.func2(i)]);
+    // }
     return data;
   }
 
@@ -262,7 +370,11 @@ export class DrawComponent implements OnInit {
   };
 
 
-
+  send() {
+    //להפעיל פונקציה שנשגת לשרת
+    //הפונקציה תקבל מחרוזת וגם קוד משתמש:
+    var string = (<HTMLInputElement>document.getElementById("func")).value
+  }
 
 
 

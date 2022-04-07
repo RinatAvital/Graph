@@ -1,6 +1,6 @@
 import { Parameter } from "./Parameter";
 
-export interface Equation{
+export class Equation {
     class: number;
     count: number;
     Parameters: Parameter[];

@@ -1,7 +1,7 @@
 #titel{
-    height: 12vh;
     text-align: center;
-    background-color: darkgray;
+    color: dimgray;
+    font-size: xx-large;
 }
 
 #enter{
@@ -9,5 +9,12 @@
     justify-content: space-evenly;
     flex-direction: row;
     align-items: stretch;
+    
+}
+
+#signInUp{
+    display: flex;
+    width: 25%;
+    height: 70%;
 }
 

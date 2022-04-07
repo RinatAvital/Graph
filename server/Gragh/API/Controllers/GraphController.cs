@@ -1,5 +1,7 @@
 ﻿using BL.models;
 using DTO;
+using BL;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,7 @@ namespace API.Controllers
         
 
         // GET: api/Graph/getOneGraph
-        public List<Point> GetOneGraph()
+        public Equation GetOneGraph()
         {
             return BL.GraphManager.getOneGraph();
         }
@@ -33,9 +35,10 @@ namespace API.Controllers
             return BL.GraphManager.getNigzeret();
         }
 
-        // POST: api/Graph
-        public void Post([FromBody]string value)
+        // POST: api/Graph/PostImportGraphString
+        public Graphs PostImportGraphString(string graph, long userCode)
         {
+           return BL.GraphManager.importGraph(graph, userCode);
         }
 
         // PUT: api/Graph/5

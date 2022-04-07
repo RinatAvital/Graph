@@ -1,10 +1,13 @@
-
-<form class="mb-3">
-    <label class="form-text" for="fn">שם פרטי:</label>
-    <input formControlName="firstName" class="form-control" type="text" placeholder="ישראל" id="fn">
-
-    <label class="form-text" for="ps">סיסמה</label>
-    <input formControlName="password" class="form-control" type="password" placeholder="" id="ps">
+<form [formGroup]="signInForm" class="mb-3 card card-body">
+    
+    <div class="mb-3">
+        <label class="form-text" for="fn">שם פרטי:</label>
+        <input formControlName="firstName" class="form-control" type="text" placeholder="ישראל" id="fn">
+    </div>
+    <div class="mb-3">
+        <label class="form-text" for="ps">סיסמה</label>
+        <input formControlName="password" class="form-control" type="password" placeholder="" id="ps">
+    </div>
 
     <button type="submit" class="btn btn-primary" (click)="doSignIn()">שלח</button>
 </form>

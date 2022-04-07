@@ -11,20 +11,21 @@ import { UserSignIn } from '../models/UserSignIn';
 })
 export class DbService {
 
+  e: Equation = new Equation()
+
   constructor(private http: HttpClient) { }
 
-  getGragh(): Observable < Graph[] > {
+  getGragh(): Observable<Graph[]> {
     return this.http.get<Graph[]>('http://localhost:59111/api/Graph/GetAllGraph');
   }
-  getAllEquation(){
-    debugger
-    return this.http.get<Equation>('http://localhost:59111/api/Graph/GetNigzeret');
+  getOneEquation(): Observable<Equation> {
+    return this.http.get<Equation>('http://localhost:59111/api/Graph/getOneGraph')
   }
-  newSignUp(user:User):Observable<User>{
-    return this.http.post<User>('http://localhost:59111/api/User/PostSignUp',user);
+  newSignUp(user: User): Observable<User> {
+    return this.http.post<User>('http://localhost:59111/api/User/PostSignUp', user);
   }
-  newSignIn(user:UserSignIn):Observable<User>{
-    return this.http.post<User>('http://localhost:59111/api/User/PostSignIn',user);
+  newSignIn(user: UserSignIn): Observable<User> {
+    return this.http.post<User>('http://localhost:59111/api/User/PostSignIn', user);
   }
-  
+
 }

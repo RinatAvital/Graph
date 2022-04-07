@@ -30,7 +30,7 @@ export class GraphComponent implements OnInit {
   
 
   getEquation() {
-    this.dbService.getAllEquation().subscribe(res => {
+    this.dbService.getOneEquation().subscribe(res => {      
       console.log(res);
       this.equation[0] = res;
     })

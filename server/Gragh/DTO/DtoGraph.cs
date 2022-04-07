@@ -15,6 +15,14 @@ namespace DTO
         public long userCode { get; set; }
         public DateTime creationDate { get; set; }
 
+        public DtoGraph(string graph, long usercode, DateTime dateTime)
+        {
+            this.graphCode = 0;
+            this.graphString = graph;
+            this.userCode = usercode;
+            this.creationDate = DateTime.Now;
+            
+        }
         public DtoGraph(Graphs g)
         {
             graphCode = (long)g.graphCode;
