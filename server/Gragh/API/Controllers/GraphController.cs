@@ -35,10 +35,17 @@ namespace API.Controllers
             return BL.GraphManager.getNigzeret();
         }
 
-        // POST: api/Graph/PostImportGraphString
-        public Graphs PostImportGraphString(string graph, long userCode)
+        // GET: api/Graph/GetPointGraph
+        public List<Point> GetPointGraph()
         {
-           return BL.GraphManager.importGraph(graph, userCode);
+            return BL.GraphManager.getPointGraph();
+        }
+
+
+        // POST: api/Graph/PostImportGraphString
+        public Graphs PostImportGraphString(graphNew graph)
+        {
+            return BL.GraphManager.importGraph(graph.graphString,graph.userCode);
         }
 
         // PUT: api/Graph/5

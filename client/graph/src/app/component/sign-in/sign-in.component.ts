@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
 
     this.signInForm = new FormGroup(
       {
-        firstName: new FormControl(''),
+        userName: new FormControl(''),
         password: new FormControl('')
       }
 
@@ -28,8 +28,9 @@ export class SignInComponent implements OnInit {
 
   doSignIn() {
     console.log(this.signInForm)
+    debugger;
     const user: UserSignIn = {
-      firstName: this.signInForm.controls.fn.Value,
+      userName: this.signInForm.controls.un.Value,
       password: this.signInForm.controls.ps.Value
     }
     console.log(user)

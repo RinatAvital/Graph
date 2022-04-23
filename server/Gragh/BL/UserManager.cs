@@ -15,7 +15,6 @@ namespace BL
         {
             List<Users> user = db.GetDbSet<Users>().ToList();
             return DtoUser.DTOtoList(user);
-
         }
         public static Users signUp(DtoUser user)
         {

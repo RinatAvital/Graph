@@ -1,13 +1,15 @@
 
 .ul {
   text-align: center;
+  color: black;
 }
 
 #nav{
   background-color: dimgray;
   height: 8vh;
   font-size: x-large;
-  color: black;
   border-radius: 5px;
 }
-
+a{
+  color: black;
+}

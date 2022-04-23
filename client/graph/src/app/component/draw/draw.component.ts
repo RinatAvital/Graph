@@ -7,6 +7,8 @@ import Keyboard from "simple-keyboard";
 import { getInstanceByDom, connect } from 'echarts';
 import * as util from 'zrender/lib/core/util';
 import * as echarts from 'echarts';
+import { GraphNew } from 'src/app/models/GraphNew';
+import { Point } from 'src/app/models/Point';
 
 
 
@@ -17,7 +19,7 @@ import * as echarts from 'echarts';
 })
 export class DrawComponent implements OnInit {
 
-
+  point: Point[] = [];
   equation: Equation
   myGraph: any;
   myChart: any;
@@ -28,251 +30,113 @@ export class DrawComponent implements OnInit {
 
   ngOnInit(): void {
     debugger;
-    var dom = document.getElementById("container")!;
-    var myChart = echarts.init(dom);
-    var app = {};
-    var option;
+    // var dom = document.getElementById("container")!;
+    // var myChart = echarts.init(dom);
+    // var app = {};
+    // var option;
 
-    this.dbService.getOneEquation().subscribe(res => {
-      console.log("getAllEquation!");
+    // this.dbService.getOneEquation().subscribe(res => {
+    //   console.log("getAllEquation!");
+    //   console.log(res);
+    //   this.equation = res;
+    //   this.res = res;
+    //   console.log(this.equation);
 
-      console.log(res);
-      this.equation = res;
-      this.res = res;
-      console.log(this.equation);
 
+    //   const data = [
+    //     [0, 0],
+    //     [1, 1],
+    //     [5, 5],
 
-      const data = [
-        [0, 0],
-        [1, 1],
-        [5, 5],
-  
-      ];
+    //   ];
 
-      option = {
-        animation: false,
-        grid: {
-          top: 40,
-          left: 50,
-          right: 40,
-          bottom: 50
-        },
-        hoverLayerThreshold: 3000,
-        tooltip: {
-          triggerOn: 'none',
-          formatter: function (params) {
-            return (
-              'X: ' +
-              params.data[0].toFixed(2) +
-              '<br>Y: ' +
-              params.data[1].toFixed(2)
-            );
-          }
-        },
-        xAxis: {
-          name: 'x',
-          minorTick: {
-            show: true
-          },
-          minorSplitLine: {
-            show: true
-          }
-        },
-        yAxis: {
-          name: 'y',
-          min: -100,
-          max: 100,
-          minorTick: {
-            show: true
-          },
-          minorSplitLine: {
-            show: true
-          }
-        },
-        dataZoom: [
-          {
-            show: true,
-            type: 'inside',
-            filterMode: 'none',
-            xAxisIndex: [0],
-            startValue: -20,
-            endValue: 20
-          },
-          {
-            show: true,
-            type: 'inside',
-            filterMode: 'none',
-            yAxisIndex: [0],
-            startValue: -20,
-            endValue: 20
-          }
-        ],
-        series: [
-          {
-            id: 'a',
-            type: 'line',
-            showSymbol: false,
-            clip: true,
-            symbolSize: 30,
-            data: this.generateData()
-          }
-        ]
-      };
-  
-      // var zr = myChart.getZr();
-  
-      // zr.on('mousemove', function (params) {
-      //   var pointInPixel = [params.offsetX, params.offsetY];
-      //   zr.setCursorStyle(
-      //     myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
-      //   );
-      // });
-  
-      // debugger;
-      if (option && typeof option === 'object') {
-        myChart.setOption(option);
-      }
-    },
-      err => {
-        console.log("error: " + err.message);
-      })
-
-    // const data = [
-    //   [0, 0],
-    //   [1, 1],
-    //   [5, 5],
-
-    // ];
-    // debugger;
-    // option = {
-    //   animation: false,
-    //   grid: {
-    //     top: 40,
-    //     left: 50,
-    //     right: 40,
-    //     bottom: 50
-    //   },
-    //   hoverLayerThreshold: 3000,
-    //   tooltip: {
-    //     triggerOn: 'none',
-    //     formatter: function (params) {
-    //       return (
-    //         'X: ' +
-    //         params.data[0].toFixed(2) +
-    //         '<br>Y: ' +
-    //         params.data[1].toFixed(2)
-    //       );
-    //     }
-    //   },
-    //   xAxis: {
-    //     name: 'x',
-    //     minorTick: {
-    //       show: true
+    //   option = {
+    //     animation: false,
+    //     grid: {
+    //       top: 40,
+    //       left: 50,
+    //       right: 40,
+    //       bottom: 50
     //     },
-    //     minorSplitLine: {
-    //       show: true
-    //     }
-    //   },
-    //   yAxis: {
-    //     name: 'y',
-    //     min: -100,
-    //     max: 100,
-    //     minorTick: {
-    //       show: true
+    //     hoverLayerThreshold: 3000,
+    //     tooltip: {
+    //       triggerOn: 'none',
+    //       formatter: function (params) {
+    //         return (
+    //           'X: ' +
+    //           params.data[0].toFixed(2) +
+    //           '<br>Y: ' +
+    //           params.data[1].toFixed(2)
+    //         );
+    //       }
     //     },
-    //     minorSplitLine: {
-    //       show: true
-    //     }
-    //   },
-    //   dataZoom: [
-    //     {
-    //       show: true,
-    //       type: 'inside',
-    //       filterMode: 'none',
-    //       xAxisIndex: [0],
-    //       startValue: -20,
-    //       endValue: 20
+    //     xAxis: {
+    //       name: 'x',
+    //       minorTick: {
+    //         show: true
+    //       },
+    //       minorSplitLine: {
+    //         show: true
+    //       }
     //     },
-    //     {
-    //       show: true,
-    //       type: 'inside',
-    //       filterMode: 'none',
-    //       yAxisIndex: [0],
-    //       startValue: -20,
-    //       endValue: 20
-    //     }
-    //   ],
-    //   series: [
-    //     {
-    //       id: 'a',
-    //       type: 'line',
-    //       showSymbol: false,
-    //       clip: true,
-    //       symbolSize: 30,
-    //       data: this.generateData()
-    //     }
-    //   ]
-    // };
+    //     yAxis: {
+    //       name: 'y',
+    //       min: -100,
+    //       max: 100,
+    //       minorTick: {
+    //         show: true
+    //       },
+    //       minorSplitLine: {
+    //         show: true
+    //       }
+    //     },
+    //     dataZoom: [
+    //       {
+    //         show: true,
+    //         type: 'inside',
+    //         filterMode: 'none',
+    //         xAxisIndex: [0],
+    //         startValue: -20,
+    //         endValue: 20
+    //       },
+    //       {
+    //         show: true,
+    //         type: 'inside',
+    //         filterMode: 'none',
+    //         yAxisIndex: [0],
+    //         startValue: -20,
+    //         endValue: 20
+    //       }
+    //     ],
+    //     series: [
+    //       {
+    //         id: 'a',
+    //         type: 'line',
+    //         showSymbol: false,
+    //         clip: true,
+    //         symbolSize: 30,
+    //         data: this.generateData()
+    //       }
+    //     ]
+    //   };
 
-    // // var zr = myChart.getZr();
+    //   // var zr = myChart.getZr();
 
-    // // zr.on('mousemove', function (params) {
-    // //   var pointInPixel = [params.offsetX, params.offsetY];
-    // //   zr.setCursorStyle(
-    // //     myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
-    // //   );
-    // // });
+    //   // zr.on('mousemove', function (params) {
+    //   //   var pointInPixel = [params.offsetX, params.offsetY];
+    //   //   zr.setCursorStyle(
+    //   //     myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
+    //   //   );
+    //   // });
 
-    // // debugger;
-    // if (option && typeof option === 'object') {
-    //   myChart.setOption(option);
-    // }
-
-    // debugger;
-    // let myGraph = new CanvasGraph({
-    //   canvasId: "myCanvas",
-    //   minX: -10,
-    //   minY: -10,
-    //   maxX: 10,
-    //   maxY: 10,
-    //   unitsPerTick: 1
-    // });
-
-    //   myGraph.drawEquation((x: number) => {
-
-    //     //const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
-    //     let str = "";
-
-    //     let i = 0;
-    //     debugger;
-    //     for (let p of this.equation.Parameters) {
-    //       let v = p.Value;
-    //       let c = p.class;
-    //       let o = p.Operator;
-    //       str += "o*v*x^c ";
-    //       i++;
-    //     }
-    //     return eval(str);
-
-    //   }, "green", 3);
-
-    //   myGraph.drawEquation(function (x: number) {
-    //     return eval('-x * x * x + 2');
-    //   }, "blue", 3);
-
-    //   myGraph.drawEquation(function (x: number) {
-    //     return -2 * (x * x) + 8
-    //   }, "red", 3);
-
-
-    // function showTooltip(dataIndex) {
-    //   myChart.dispatchAction({
-    //     type: 'showTip',
-    //     seriesIndex: 0,
-    //     dataIndex: dataIndex
-    //   });
-    // }
-
+    //   // debugger;
+    //   if (option && typeof option === 'object') {
+    //     myChart.setOption(option);
+    //   }
+    // },
+    //   err => {
+    //     console.log("error: " + err.message);
+    //   })
   }
 
 
@@ -284,16 +148,13 @@ export class DrawComponent implements OnInit {
     let str = "";
     let s = "";
     let i = 0;
-    // // let X= "";
-    // // let xx=`${x}`
 
-    
     for (let p of this.equation.Parameters) {
       let v = p.Value;
       let c = p.Class;
       let o = p.Operator;
-      let X="";
-      let xx="";
+      let X = "";
+      let xx = "";
       for (let i = 0; i < c; i++) {
         X = `*${x}`;
         xx += X;
@@ -304,7 +165,7 @@ export class DrawComponent implements OnInit {
       i++;
     }
     return eval(str);
-    return eval("+2*x*x -5*x +7");
+    //return eval("+2*x*x -5*x +7");
     //return x * x * x;
   }
   // func2(x: number) {
@@ -323,15 +184,7 @@ export class DrawComponent implements OnInit {
   }
 
 
-
-
-
-
-
-
-
-
-
+  //Keyboard
 
   value = "";
   keyboard: Keyboard;
@@ -373,12 +226,140 @@ export class DrawComponent implements OnInit {
   send() {
     //להפעיל פונקציה שנשגת לשרת
     //הפונקציה תקבל מחרוזת וגם קוד משתמש:
-    var string = (<HTMLInputElement>document.getElementById("func")).value
+    debugger
+    var dom = document.getElementById("container")!;
+    var myChart = echarts.init(dom);
+    var app = {};
+    var option;
+
+    var graphStringHTML = (<HTMLInputElement>document.getElementById("func")).value
+    console.log(graphStringHTML);
+    const newGraph: GraphNew = {
+      graphString: graphStringHTML,
+      userCode: 1
+    }
+    this.dbService.sendStringGraphToDB(newGraph).subscribe(res=>{
+      console.log(res);
+      debugger
+      if(res==null)
+        alert("שגיאת שרת");
+      else{
+        alert("נוסף בהצלה");
+        this.dbService.getOneEquation().subscribe(res => {
+          console.log("getAllEquation!");
+          console.log(res);
+          this.equation = res;
+          this.res = res;
+          console.log(this.equation);
+    
+    
+          const data = [
+            [0, 0],
+            [1, 1],
+            [5, 5],
+    
+          ];
+    
+          option = {
+            animation: false,
+            grid: {
+              top: 40,
+              left: 50,
+              right: 40,
+              bottom: 50
+            },
+            hoverLayerThreshold: 3000,
+            tooltip: {
+              triggerOn: 'none',
+              formatter: function (params) {
+                return (
+                  'X: ' +
+                  params.data[0].toFixed(2) +
+                  '<br>Y: ' +
+                  params.data[1].toFixed(2)
+                );
+              }
+            },
+            xAxis: {
+              name: 'x',
+              minorTick: {
+                show: true
+              },
+              minorSplitLine: {
+                show: true
+              }
+            },
+            yAxis: {
+              name: 'y',
+              min: -100,
+              max: 100,
+              minorTick: {
+                show: true
+              },
+              minorSplitLine: {
+                show: true
+              }
+            },
+            dataZoom: [
+              {
+                show: true,
+                type: 'inside',
+                filterMode: 'none',
+                xAxisIndex: [0],
+                startValue: -20,
+                endValue: 20
+              },
+              {
+                show: true,
+                type: 'inside',
+                filterMode: 'none',
+                yAxisIndex: [0],
+                startValue: -20,
+                endValue: 20
+              }
+            ],
+            series: [
+              {
+                id: 'a',
+                type: 'line',
+                showSymbol: false,
+                clip: true,
+                symbolSize: 30,
+                data: this.generateData()
+              }
+            ]
+          };
+    
+          // var zr = myChart.getZr();
+    
+          // zr.on('mousemove', function (params) {
+          //   var pointInPixel = [params.offsetX, params.offsetY];
+          //   zr.setCursorStyle(
+          //     myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default'
+          //   );
+          // });
+    
+          // debugger;
+          if (option && typeof option === 'object') {
+            myChart.setOption(option);
+          }
+        },
+          err => {
+            console.log("error: " + err.message);
+          })
+      }
+        
+    })
   }
-
-
-
-
+  
+  showPoint() {
+    debugger;
+    this.dbService.getPointGraph().subscribe(res => {
+      console.log(res);
+      debugger;
+      this.point = res;
+    })
+  }
 
 
 }

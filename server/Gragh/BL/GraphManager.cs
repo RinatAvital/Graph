@@ -19,19 +19,22 @@ namespace BL
 
         }
 
-        public static List<Point> getListGraph()
+        public static List<Point> getPointGraph()
         {
             List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
             List<DtoGraph> g = DtoGraph.DTOtoList(graph);
             Equation equation = Calculate.getEquationFromStr(g[1].graphString);
-            return Calculate.getPoint(equation);
+            return Point.culc_points(equation);
+            //return Calculate.getPoint(equation);
             //return new DtoGraph(g, points);
         }
         public static Equation getOneGraph()
         {
             List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
             List<DtoGraph> g = DtoGraph.DTOtoList(graph);
-            return Calculate.getEquationFromStr(g[0].graphString);
+            //return Calculate.getEquationFromStr(g[4].graphString);
+            int length = g.Count-1;
+            return Calculate.getEquationFromStr(g[length].graphString);
             //return Calculate.getPoint(equation).;
             //return new DtoGraph(g, points);
         }

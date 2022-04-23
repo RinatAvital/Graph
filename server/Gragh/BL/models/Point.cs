@@ -32,8 +32,8 @@ namespace BL.models
             //משוואה עם שתי איברים מלאים
             if (e.Count == 2 && e.Class == 1)
             {
-                double a1 = e.Parameters[0].Value;
-                double b1 = e.Parameters[1].Value;
+                double a1 = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
+                double b1 = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1); 
                 double x = (-b1 / a1);
                 Points.Add(new Point(x, 0));
                 Points.Add(new Point(0, b1));
@@ -51,8 +51,8 @@ namespace BL.models
             //משוואה עם שתי איברים ממעלה שניה - a, b
             else if (e.Count == 2 && e.Class == 2 && e.Parameters[1].Class == 1)
             {
-                a = e.Parameters[0].Value;
-                b = e.Parameters[1].Value;
+                a = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
+                b = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
                 c = 0;
 
             }
@@ -60,9 +60,9 @@ namespace BL.models
             //משוואה עם שתי איברים ממעלה שניה - a, c
             else if (e.Count == 2 && e.Class == 2 && e.Parameters[1].Class == 0)
             {
-                a = e.Parameters[0].Value;
+                a = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
                 b = 0;
-                c = e.Parameters[1].Value;
+                c = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
             }
 
             Console.WriteLine();
@@ -141,6 +141,21 @@ namespace BL.models
             nigzeret.Class = nigzeret.Parameters[0].Class;
             nigzeret.Count = m;
             return nigzeret;
+        }
+
+
+        public static List<Point> culc_point_class_tree(Equation e)
+        {
+
+
+            List<Point> points = new List<Point>();
+
+
+
+
+
+
+            return points;
         }
 
 

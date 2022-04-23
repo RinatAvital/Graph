@@ -24,8 +24,8 @@ namespace API.Controllers
         {
             return BL.UserManager.signUp(user);
         }
-        // POST: api/User/PostLogIn
-        public DtoUser PostSignIn([FromBody] userDetails user)
+        // POST: api/User/PostSignIn
+        public DtoUser PostSignIn(userDetails user)
         {
             return BL.UserManager.signIn(user.UserName, user.Password);
         }
