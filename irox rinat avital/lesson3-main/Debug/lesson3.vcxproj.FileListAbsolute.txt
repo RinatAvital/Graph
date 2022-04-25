@@ -1,0 +1,2 @@
+C:\Users\HOME\Documents\irox\c++\lesson3\Debug\lesson3.exe
+C:\Users\HOME\Documents\irox\c++\lesson3\Debug\lesson3.pdb
