@@ -33,15 +33,17 @@ export class SignUpComponent implements OnInit {
     debugger;
     const user: User = {
       code:10,
-      firstName: this.signUpForm.controls.fn.value,
-      lastName: this.signUpForm.controls.ln.Value,
-      userName: this.signUpForm.controls.un.Value,
-      email: this.signUpForm.controls.em.Value,
-      password: this.signUpForm.controls.ps.Value
+      firstName: this.signUpForm.controls.firstName.value,
+      lastName: this.signUpForm.controls.lastName.value,
+      userName: this.signUpForm.controls.userName.value,
+      email: this.signUpForm.controls.email.value,
+      password: this.signUpForm.controls.password.value
     }
     console.log(user)
+    debugger
   
     this.db.newSignUp(user).subscribe(res=>{
+      debugger;
       console.log(res);
       if(res==null)
         alert("שגיאת שרת");

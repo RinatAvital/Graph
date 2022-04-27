@@ -11,7 +11,7 @@ Buffer::Buffer()
 
 void Buffer::addToBuffer(unsigned char* newMessege)
 {
-	buffer = (unsigned char**)realloc(buffer, sizeof(unsigned char*) * ++count);
+	buffer = (unsigned char**)realloc(buffer, sizeof(unsigned char*) * (++count));
 	if (buffer == NULL)
 		exit(1);
 	buffer[count - 1] = newMessege;

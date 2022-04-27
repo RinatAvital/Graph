@@ -56,9 +56,6 @@
     <ClInclude Include="Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sinulator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Simulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>

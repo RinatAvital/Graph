@@ -8,9 +8,11 @@ using System.Web.Http;
 using BL;
 using DAL;
 using BL.models;
+using System.Web.Http.Cors;
 
 namespace API.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : ApiController
     {
         // GET: api/User/GetAllUser
@@ -25,7 +27,7 @@ namespace API.Controllers
             return BL.UserManager.signUp(user);
         }
         // POST: api/User/PostSignIn
-        public DtoUser PostSignIn(userDetails user)
+        public Users PostSignIn(userDetails user)
         {
             return BL.UserManager.signIn(user.UserName, user.Password);
         }

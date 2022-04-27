@@ -22,8 +22,9 @@ class Camera
 {
 	protected:
 		char cameraId;
-		baseMessage** bufferMessage;
+		baseMessage** bufferMessage=NULL;
 		int indexMessage;
+		int numOfMessege = 0;
 		Buffer* buffer;
 		bool isActive;
 		//static int count;
@@ -35,6 +36,8 @@ class Camera
 		void sendToBuffer();
 		void run();
 		void stop();
+		unsigned char** getBufferValue();
+		int getOfNumOfMessege();
 
 
 

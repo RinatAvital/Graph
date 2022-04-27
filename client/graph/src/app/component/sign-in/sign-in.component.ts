@@ -30,17 +30,18 @@ export class SignInComponent implements OnInit {
     console.log(this.signInForm)
     debugger;
     const user: UserSignIn = {
-      userName: this.signInForm.controls.un.Value,
-      password: this.signInForm.controls.ps.Value
+      userName: this.signInForm.controls.userName.value,
+      password: this.signInForm.controls.password.value
     }
     console.log(user)
     
     this.db.newSignIn(user).subscribe(res=>{
+      debugger;
       console.log(res);
       if(res==null)
         alert("שגיאת שרת");
       else
-        alert("נוסף בהצלה")
+        alert("נוסף בהצלה");
     })
   }
 

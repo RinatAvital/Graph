@@ -155,7 +155,6 @@
     <ClInclude Include="DiscoverMessege.h" />
     <ClInclude Include="Simulatir.h" />
     <ClInclude Include="Simulator.h" />
-    <ClInclude Include="Sinulator.h" />
     <ClInclude Include="StatusMesseage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

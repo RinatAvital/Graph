@@ -31,6 +31,7 @@ export class DbService {
     return this.http.post<User>('http://localhost:59111/api/User/PostSignUp', user);
   }
   newSignIn(user: UserSignIn): Observable<User> {
+    debugger;
     return this.http.post<User>('http://localhost:59111/api/User/PostSignIn', user);
   }
   sendStringGraphToDB(graph: GraphNew):Observable<GraphNew>{

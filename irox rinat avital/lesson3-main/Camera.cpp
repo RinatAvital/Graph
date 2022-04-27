@@ -27,7 +27,7 @@ DiscoverMessege* createDiscoverMessage()
 {
 	static int id = 99;
 	id++;
-	return new DiscoverMessege(id, 2, rand() % 9500 + 500, rand() % 361, rand() % 1001);
+	return new DiscoverMessege(id, 2, (float)(rand() % 9500 + 500), (float)(rand() % 361), (float)(rand() % 1001));
 }
 
 
@@ -45,10 +45,9 @@ void Camera::generate()
 	{
 		bufferMessage= (baseMessage**)realloc(bufferMessage, sizeof(baseMessage*) * (++indexMessage + 1));
 		(rand() % 2 + 1 == 1) ? bufferMessage[indexMessage] = createStatusMessage() : bufferMessage[indexMessage] = createDiscoverMessage();
+		//bufferMessage[i]->print();
 		
 	}
-
-
 }
 
 void Camera::sendToBuffer()
@@ -62,6 +61,7 @@ void Camera::sendToBuffer()
 	}
 	free(bufferMessage);
 	bufferMessage = NULL;
+	numOfMessege += indexMessage;
 	indexMessage = -1;
 
 }
@@ -78,6 +78,16 @@ void Camera::run()
 void Camera::stop()
 {
 	isActive = false;
+}
+
+unsigned char** Camera::getBufferValue()
+{
+	return buffer->getBuffer();
+}
+
+int Camera::getOfNumOfMessege()
+{
+	return numOfMessege;
 }
 
 

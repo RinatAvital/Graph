@@ -170,7 +170,7 @@ export class DrawComponent implements OnInit {
   }
   // func2(x: number) {
   //   x /= 10;
-  //   return x + 1;
+  //   return eval("sin(x)");
   // }
   generateData() {
     let data: any[] = [];

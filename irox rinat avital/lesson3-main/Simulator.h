@@ -4,6 +4,7 @@
 #include<stdio.h>
 #include<iostream>
 
+#define N 4
 class Simulator
 {
 	protected:
@@ -11,6 +12,7 @@ class Simulator
 		
 	public:
 		Simulator();
-		void ThredRunCamera();
+		void ThreadRunCamera();
+		void printValueAllCamera();
 };
 

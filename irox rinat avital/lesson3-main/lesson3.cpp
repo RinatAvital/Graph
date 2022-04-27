@@ -7,5 +7,7 @@
 int main()
 {
     Simulator* simulator = new Simulator();
+    simulator->ThreadRunCamera();
+    simulator->printValueAllCamera();
 }
 
