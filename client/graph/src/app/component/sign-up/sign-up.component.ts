@@ -47,8 +47,12 @@ export class SignUpComponent implements OnInit {
       console.log(res);
       if(res==null)
         alert("שגיאת שרת");
-      else
-        alert("נוסף בהצלה")
+      else{
+        alert("נוסף בהצלה");
+        
+      }
+        
+      
     })
   }
 

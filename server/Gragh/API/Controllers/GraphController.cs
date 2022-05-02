@@ -18,10 +18,10 @@ namespace API.Controllers
         
 
         // GET: api/Graph/getOneGraph
-        public Equation GetOneGraph()
-        {
-            return BL.GraphManager.getOneGraph();
-        }
+        //public Equation GetOneGraph()
+        //{
+        //    return BL.GraphManager.getOneGraph();
+        //}
 
         // GET: api/Graph/GetAllGraph
         public List<DtoGraph> GetAllGraph()
@@ -29,11 +29,7 @@ namespace API.Controllers
             return BL.GraphManager.getGraphs();
         }
 
-        // GET: api/Graph/GetNigzeret
-        public Equation GetNigzeret()
-        {
-            return BL.GraphManager.getNigzeret();
-        }
+        
 
         // GET: api/Graph/GetPointGraph
         public List<Point> GetPointGraph()
@@ -41,11 +37,17 @@ namespace API.Controllers
             return BL.GraphManager.getPointGraph();
         }
 
-
         // POST: api/Graph/PostImportGraphString
-        public Graphs PostImportGraphString(graphNew graph)
+        //מחזיר אובייקט משוואה שהתקבל מהמשתמש
+        public Equation PostImportGraphString(graphNew graph)
         {
             return BL.GraphManager.importGraph(graph.graphString,graph.userCode);
+        }
+
+        // POST: api/Graph/PostNigzeret
+        public Equation PostNigzeret(Equation equation)
+        {
+            return BL.GraphManager.getNigzeret(equation);
         }
 
         // PUT: api/Graph/5

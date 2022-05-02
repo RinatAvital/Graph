@@ -21,7 +21,11 @@
         <input id="func" (input)="onInputChange($event)" class="input" value={{value}} placeholder="enter a function f(x)= x^2" />
         <button class="btn btn-secondary" (click)="send()">send</button>
 
-        <input type="button" value="הצגת נקודות" class="btn btn-secondary" (click)="showPoint()">
+        <button class="btn btn-secondary" (click)="ShowNigzeret()">הצגת ניגזרת</button>
+
+        
+
+        <button class="btn btn-secondary" (click)="showPoint()">הצגת נקודות</button>
         <p *ngFor="let p of point">({{p.x}},{{p.y}})</p>
 
 

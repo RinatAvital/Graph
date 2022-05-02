@@ -9,7 +9,15 @@
   height: 8vh;
   font-size: x-large;
   border-radius: 5px;
+  direction: rtl;
 }
 a{
   color: black;
+}
+
+#user{
+  direction: ltr;
+}
+#header{
+  display: inline;
 }
