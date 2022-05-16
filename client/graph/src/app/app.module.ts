@@ -15,6 +15,7 @@ import { CommonModule }   from '@angular/common';
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { HomeComponent } from './component/home/home.component';
+import { EnterComponent } from './component/enter/enter.component';
 
 
 
@@ -26,7 +27,8 @@ import { HomeComponent } from './component/home/home.component';
     UserComponent,
     SignUpComponent,
     SignInComponent,
-    HomeComponent
+    HomeComponent,
+    EnterComponent
   ],
   imports: [
     CommonModule,

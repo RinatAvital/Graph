@@ -1,23 +1,25 @@
-
 .ul {
   text-align: center;
   color: black;
 }
 
-#nav{
-  background-color: dimgray;
+#nav {
+  background-color: black;
   height: 8vh;
   font-size: x-large;
   border-radius: 5px;
   direction: rtl;
 }
-a{
-  color: black;
+
+a {
+  color: white;
 }
 
-#user{
+#user {
   direction: ltr;
 }
-#header{
+
+#header {
   display: inline;
 }
+

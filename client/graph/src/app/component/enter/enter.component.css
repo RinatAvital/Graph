@@ -1,0 +1,15 @@
+/* body{
+    background-image:url(assets/backround.png);
+} */
+img {
+    /* width: 90vw; */
+    height: 90vh;
+    padding-left: 15%;
+    
+
+}
+
+/* html { 
+    background: url([img]) no-repeat center fixed; 
+    background-size: cover;
+} */
