@@ -102,7 +102,10 @@ namespace BL.models
             {
                 //מסירים מהאיבר את כל התוים השונים מהערך וממינים ע"פ אורך הגדול
                 string s = v.Split('+', '-', '^', 'x').OrderByDescending(x => x.Length).ToArray()[0];
-                p.Value = Convert.ToDouble(s);
+                if (s == "")
+                    p.Value = Convert.ToDouble(1);
+                else
+                    p.Value = Convert.ToDouble(s);
 
             }
         }

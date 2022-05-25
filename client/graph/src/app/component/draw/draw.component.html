@@ -18,18 +18,16 @@
     </div>
 
     <div id="chad">
-        <input id="func" (input)="onInputChange($event)" class="input" value={{value}} placeholder="enter a function f(x)= x^2" />
+        <input id="func" (input)="onInputChange($event)" class="input" value={{value}}
+            placeholder="enter a function f(x)= x^2" />
         <button class="btn btn-secondary" (click)="send()">send</button>
-
         <button class="btn btn-secondary" (click)="ShowNigzeret()">הצגת ניגזרת</button>
-
-        
-
         <button class="btn btn-secondary" (click)="showPoint()">הצגת נקודות</button>
-        <p *ngFor="let p of point">({{p.x}},{{p.y}})</p>
+        <p *ngFor="let po of point">({{po.X}},{{po.Y}})</p>
 
-
+        <!-- <input type="button" value="הצגת נקודות" (click)="showPoint()">
+        <p *ngFor="let g of point">{{g.X}}</p> -->
     </div>
-    
+
 
 </div>

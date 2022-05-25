@@ -29,12 +29,12 @@ namespace API.Controllers
             return BL.GraphManager.getGraphs();
         }
 
-        
 
-        // GET: api/Graph/GetPointGraph
-        public List<Point> GetPointGraph()
+
+        // POST: api/Graph/PostPointGraph
+        public List<Point> PostPointGraph(Equation e)
         {
-            return BL.GraphManager.getPointGraph();
+            return BL.GraphManager.getPointGraph(e);
         }
 
         // POST: api/Graph/PostImportGraphString

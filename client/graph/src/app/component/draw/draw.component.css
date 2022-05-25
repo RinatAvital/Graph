@@ -32,6 +32,7 @@ input {
 }
 
 #chad{
+  display: flex;
   width: 20%;
   height: 92vh;
   /* border: 2px black solid; */
@@ -39,7 +40,15 @@ input {
   border: 2px rgb(176, 150, 150) solid;
   background-color: rgb(244, 238, 238);
   border-radius: 12px;
+  flex-direction: column;
+  align-items: stretch;
 }
+
+button{
+  margin: 5px;
+}
+
+
 
 #main{
   display: flex;

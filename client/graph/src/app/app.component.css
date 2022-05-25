@@ -23,3 +23,15 @@ a {
   display: inline;
 }
 
+p{
+  margin: 4px;
+  
+}
+#user{
+  color: white;
+  font-size: medium;
+  margin: 4px;
+}
+li > div{
+  direction: rtl;
+}

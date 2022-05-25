@@ -8,7 +8,7 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['home']" routerLinkActive="router-link-active">כניסה</a>
       </li>
-          <!-- <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="['graph']" routerLinkActive="router-link-active">Graph</a>
       </li>
       <li class="nav-item">
@@ -20,8 +20,15 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['draw']" routerLinkActive="router-link-active">גרף</a>
       </li>
+      <li>
+        <div id="user">
+          <!-- <p> {{db.user2.firstName}} :שם פרטי</p> -->
+          <p> {{db.user2.firstName}} :שם</p>
+          <p> {{db.user2.userName}} :שם משתמש</p>
+        </div>
+      </li>
     </ul>
-
+    <!-- <p *ngIf="db.user!=null">{{db.user.firstName}}</p> -->
     <!-- <div id="user">
       <input id="fullName" type="button" value="fullname">
       <input id="userName" type="button" value="userName">

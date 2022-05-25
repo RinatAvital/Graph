@@ -42,18 +42,15 @@ export class SignUpComponent implements OnInit {
     console.log(user)
     debugger
   
-    this.db.newSignUp(user).subscribe(res=>{
-      debugger;
-      console.log(res);
-      if(res==null)
-        alert("שגיאת שרת");
-      else{
-        alert("נוסף בהצלה");
-        
-      }
-        
-      
-    })
+    this.db.newSignUp(user).subscribe(
+      res => {
+        debugger;
+        console.log(res);
+        this.db.user2 = res;
+        alert("נוסף בהצלחה");
+      },
+      err => console.log("error: " + err.message)
+    )
   }
 
 }

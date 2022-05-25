@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import Keyboard from "simple-keyboard";
+import { DbService } from './service/db.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,17 @@ export class AppComponent {
   value = "";
   keyboard: Keyboard;
 
+  /**
+   *
+   */
+  constructor(public db: DbService) {
+
+  }
+
   ngAfterViewInit() {
     this.keyboard = new Keyboard({
       onChange: input => this.onChange(input),
-      onKeyPress: (button:any) => this.onKeyPress(button)
+      onKeyPress: (button: any) => this.onKeyPress(button)
     });
   }
 
@@ -46,7 +54,7 @@ export class AppComponent {
   };
 
 
-  
+
 }
 
 

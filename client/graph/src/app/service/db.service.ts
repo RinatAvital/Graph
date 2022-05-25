@@ -14,6 +14,7 @@ import { Point } from '../models/Point';
 })
 export class DbService {
 
+  user2: User = new User()
   e: Equation = new Equation()
 
   constructor(private http: HttpClient) { }
@@ -23,15 +24,18 @@ export class DbService {
   }
   //מחזיר את הגרף הנוכחי
   getOneEquation(): Observable<Equation> {
-    return this.http.get<Equation>('http://localhost:59111/api/Graph/getOneGraph')
+    return this.http.get<Equation>('http://localhost:59111/api/Graph/getOneGraph');
   }
   //מחזיר רשימת נקודות מיוחדות לגרף
-  getPointGraph(): Observable<Point[]> {
-    return this.http.get<Point[]>('http://localhost:59111/api/Graph/GetPointGraph')
+  getPointGraph(e: Equation): Observable<Point[]> {
+    debugger;
+    return this.http.post<Point[]>('http://localhost:59111/api/Graph/PostPointGraph', e);
   }
   //הוספת משתמש חדש
   newSignUp(user: User): Observable<User> {
-    return this.http.post<User>('http://localhost:59111/api/User/PostSignUp', user);
+    let u = this.http.post<User>('http://localhost:59111/api/User/PostSignUp', user);
+    
+    return u;
   }
   //כניסת משתמש קיים
   newSignIn(user: UserSignIn): Observable<User> {
@@ -39,11 +43,11 @@ export class DbService {
     return this.http.post<User>('http://localhost:59111/api/User/PostSignIn', user);
   }
   //שליחת גרף לשרת וקבלת אובייקט Equation
-  sendStringGraphToDB(graph: GraphNew):Observable<Equation>{
+  sendStringGraphToDB(graph: GraphNew): Observable<Equation> {
     return this.http.post<Equation>('http://localhost:59111/api/Graph/PostImportGraphString', graph);
   }
   //קבלת נגזרת הפונקציה הנוכית
-  getNigzeret(graph: Equation):Observable<Equation>{
+  getNigzeret(graph: Equation): Observable<Equation> {
     return this.http.post<Equation>('http://localhost:59111/api/Graph/PostNigzeret', graph);
   }
 }

@@ -216,7 +216,7 @@ export class DrawComponent implements OnInit {
     let str = "";
     let s = "";
     let i = 0;
-
+    //עובר על כל איבר בפונקציה
     for (let p of equation.Parameters) {
       let v = p.Value;
       let c = p.Class;
@@ -232,14 +232,14 @@ export class DrawComponent implements OnInit {
       console.log(str);
       i++;
     }
+    //מחזיר את הפונקציה פתורה - מספר 
     return eval(str);
   }
 
 
   func(x: number) {
-
     x /= 10;
-    // // const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
+    // const str = "(+3)*5 ^2 (-2)*5^1 (-2)*5^0"
     // // const str = "(+3)*x*x -5"
     // let str = "";
     // let s = "";
@@ -280,13 +280,14 @@ export class DrawComponent implements OnInit {
     }
     return data;
   }
+
   generateDataNigzeret() {
     let data: any[] = [];
     for (let i = -200; i <= 200; i += 0.1) {
       data.push([i, this.func(i)]);
       data.push([i, this.func2(i)]);
     }
-    
+
     // for (let i = -200; i <= 200; i += 0.1) {
     //   data.push([i, this.func2(i)]);
     // }
@@ -304,7 +305,7 @@ export class DrawComponent implements OnInit {
       onChange: input => this.onChange(input),
       onKeyPress: (button: any) => this.onKeyPress(button)
     });
-  }
+  };
 
   onChange = (input: string) => {
     this.value = input;
@@ -344,9 +345,10 @@ export class DrawComponent implements OnInit {
 
     var graphStringHTML = (<HTMLInputElement>document.getElementById("func")).value
     console.log(graphStringHTML);
+    console.log(this.dbService.user2.code);
     const newGraph: GraphNew = {
       graphString: graphStringHTML,
-      userCode: 1
+      userCode: this.dbService.user2.code
     }
     this.dbService.sendStringGraphToDB(newGraph).subscribe(res => {
       console.log(res);
@@ -363,7 +365,6 @@ export class DrawComponent implements OnInit {
         this.equation = res;
         this.res = res;
         console.log(this.equation);
-
 
         const data = [
           [0, 0],
@@ -577,10 +578,11 @@ export class DrawComponent implements OnInit {
 
   showPoint() {
     debugger;
-    this.dbService.getPointGraph().subscribe(res => {
-      console.log(res);
+    this.dbService.getPointGraph(this.equation).subscribe(res => {
       debugger;
       this.point = res;
+      debugger;
+      console.log(res);
     })
   }
 

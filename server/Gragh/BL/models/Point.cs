@@ -21,7 +21,7 @@ namespace BL.models
         {
             Console.WriteLine("(" + this.X + ", " + this.Y + ")");
         }
-
+        //חישוב נקודות מיוחדות לפונקציה
         public static List<Point> culc_points(Equation e)
         {
             List<Point> Points = new List<Point>();
@@ -87,33 +87,6 @@ namespace BL.models
             Console.WriteLine("kodkod");
             Points.Add(new Point(Xkodkod, Ykodkod));
             //Console.WriteLine("(" + Xkodkod + ", " + Ykodkod + ")");
-
-            //חישוב נגזרת הפונקציה
-            //Equation nigzeret = new Equation();
-            //nigzeret.Parameters = new List<Parameter>();
-            //Parameter p = new Parameter();
-            //int m = 0;
-            //while (e.Parameters!=null)
-            //{
-            //    p.Value = e.Parameters[m].Value * e.Parameters[m].Class;
-            //    p.Operator = e.Parameters[m].Operator;
-            //    p.Class = e.Parameters[m].Class - 1;
-            //    nigzeret.Parameters.Add(p);
-
-
-            //}
-
-
-
-
-            //string derivative = (a * (Convert.ToInt32(e.Parameters[0].Class.ToString()))).ToString();//נגזרת
-            //derivative = derivative += "x " + e.Parameters[1].Value;
-            ////Console.WriteLine("f(x) = " + strGraph);
-            //Console.WriteLine("f'(x) = " + derivative);
-            //Console.WriteLine();
-
-
-
 
             return Points;
         }
