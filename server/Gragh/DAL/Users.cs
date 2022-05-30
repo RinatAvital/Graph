@@ -20,7 +20,7 @@ namespace DAL
             this.Graphs = new HashSet<Graphs>();
         }
     
-        public long Code { get; set; }
+        public int Code { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string userName { get; set; }

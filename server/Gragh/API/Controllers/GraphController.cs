@@ -30,18 +30,23 @@ namespace API.Controllers
         }
 
 
-
         // POST: api/Graph/PostPointGraph
         public List<Point> PostPointGraph(Equation e)
         {
             return BL.GraphManager.getPointGraph(e);
         }
 
+        // POST: api/Graph/PostHistori
+        public List<DtoGraph> PostHistori(Users u)
+        {
+            return BL.GraphManager.histori(u.Code);
+        }
+
         // POST: api/Graph/PostImportGraphString
         //מחזיר אובייקט משוואה שהתקבל מהמשתמש
         public Equation PostImportGraphString(graphNew graph)
         {
-            return BL.GraphManager.importGraph(graph.graphString,graph.userCode);
+            return BL.GraphManager.importGraph(graph.graphString, graph.userCode);
         }
 
         // POST: api/Graph/PostNigzeret

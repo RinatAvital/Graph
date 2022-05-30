@@ -14,9 +14,9 @@ namespace DAL
     
     public partial class Graphs
     {
-        public long graphCode { get; set; }
+        public int graphCode { get; set; }
         public string graphString { get; set; }
-        public long userCode { get; set; }
+        public int userCode { get; set; }
         public System.DateTime creationDate { get; set; }
     
         public virtual Users Users { get; set; }

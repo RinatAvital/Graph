@@ -20,6 +20,7 @@ import { Point } from 'src/app/models/Point';
 export class DrawComponent implements OnInit {
 
   point: Point[] = [];
+  histiriList: Equation[] = [];
   equation: Equation
   nigzeret: Equation
   myGraph: any;
@@ -345,10 +346,11 @@ export class DrawComponent implements OnInit {
 
     var graphStringHTML = (<HTMLInputElement>document.getElementById("func")).value
     console.log(graphStringHTML);
-    console.log(this.dbService.user2.code);
+    console.log(this.dbService.user2);
+    console.log(this.dbService.user2.Code);
     const newGraph: GraphNew = {
       graphString: graphStringHTML,
-      userCode: this.dbService.user2.code
+      userCode: this.dbService.user2.Code
     }
     this.dbService.sendStringGraphToDB(newGraph).subscribe(res => {
       console.log(res);
@@ -585,6 +587,15 @@ export class DrawComponent implements OnInit {
       console.log(res);
     })
   }
+  histori() {
+    debugger;
+    this.dbService.getHistori(this.dbService.user2).subscribe(res => {
+      debugger;
+      this.histiriList = res;
+      console.log(res);
+    })
+  }
+  
 
 
 }

@@ -33,14 +33,16 @@ export class DbService {
   }
   //הוספת משתמש חדש
   newSignUp(user: User): Observable<User> {
-    let u = this.http.post<User>('http://localhost:59111/api/User/PostSignUp', user);
-    
-    return u;
+    return this.http.post<User>('http://localhost:59111/api/User/PostSignUp', user);
   }
   //כניסת משתמש קיים
-  newSignIn(user: UserSignIn): Observable<User> {
+  newSignIn2(user: UserSignIn): Observable<User> {
     debugger;
     return this.http.post<User>('http://localhost:59111/api/User/PostSignIn', user);
+  }
+  newSignIn(u: UserSignIn): Observable<User> {
+    debugger;
+    return this.http.post<User>('http://localhost:59111/api/User/PostSignIn', u);
   }
   //שליחת גרף לשרת וקבלת אובייקט Equation
   sendStringGraphToDB(graph: GraphNew): Observable<Equation> {
@@ -49,5 +51,9 @@ export class DbService {
   //קבלת נגזרת הפונקציה הנוכית
   getNigzeret(graph: Equation): Observable<Equation> {
     return this.http.post<Equation>('http://localhost:59111/api/Graph/PostNigzeret', graph);
+  }
+  //מחזירה את היסטוריית חיפושים של משתמש
+  getHistori(user: User): Observable<Equation[]> {
+    return this.http.post<Equation[]>('http://localhost:59111/aapi/Graph/PostHistori', user);
   }
 }

@@ -9,9 +9,9 @@ namespace BL.models
     public class graphNew
     {
         public string graphString { get; set; }
-        public long userCode { get; set; }
+        public int userCode { get; set; }
 
-        public graphNew(string graphString, long userCode)
+        public graphNew(string graphString, int userCode)
         {
             this.graphString = graphString;
             this.userCode = userCode;

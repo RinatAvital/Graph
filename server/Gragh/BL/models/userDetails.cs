@@ -17,10 +17,10 @@ namespace BL.models
             this.UserName = UserName;
             this.Password = Password;
         }
-        public userDetails(userDetails ud)
-        {
-            this.UserName = ud.UserName;
-            this.Password = ud.Password;
-        }
+        //public userDetails(userDetails ud)
+        //{
+        //    this.UserName = ud.UserName;
+        //    this.Password = ud.Password;
+        //}
     }
 }

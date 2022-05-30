@@ -28,6 +28,13 @@ namespace BL
             //return Calculate.getPoint(equation);
             //return new DtoGraph(g, points);
         }
+        public static List<DtoGraph> histori(int code)
+        {
+            List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
+            List<DtoGraph> g = DtoGraph.DTOtoList(graph).Where(gg => gg.userCode == code).ToList();
+            return g;
+        }
+
 
         public static List<Point> getPointGraph(Equation e)
         {
@@ -59,7 +66,7 @@ namespace BL
             return Point.calc_nigzeret(equation);
         }
         //מקבל מחרוזת גרף וקוד משתמש ויוצר אובייקט גרף חדש בשרת
-        public static Equation importGraph(string graph, long userCode)
+        public static Equation importGraph(string graph, int userCode)
         {
             DtoGraph g = new DtoGraph(graph, userCode, DateTime.Now);
             Graphs graphs = g.toTableEntity();

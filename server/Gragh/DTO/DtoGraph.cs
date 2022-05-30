@@ -10,12 +10,12 @@ namespace DTO
 {
     public class DtoGraph
     {
-        public long graphCode { get; set; }
+        public int graphCode { get; set; }
         public string graphString { get; set; }
-        public long userCode { get; set; }
+        public int userCode { get; set; }
         public DateTime creationDate { get; set; }
 
-        public DtoGraph(string graph, long usercode, DateTime dateTime)
+        public DtoGraph(string graph, int usercode, DateTime dateTime)
         {
             this.graphCode = 0;
             this.graphString = graph;
@@ -25,9 +25,9 @@ namespace DTO
         }
         public DtoGraph(Graphs g)
         {
-            graphCode = (long)g.graphCode;
+            graphCode = (int)g.graphCode;
             graphString = g.graphString;
-            userCode = (long)g.userCode;
+            userCode = (int)g.userCode;
             creationDate = (DateTime)g.creationDate;
         }
         public static List<DtoGraph> DTOtoList(List<Graphs> list)

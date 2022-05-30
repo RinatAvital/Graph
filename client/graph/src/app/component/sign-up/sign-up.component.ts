@@ -32,7 +32,7 @@ export class SignUpComponent implements OnInit {
     console.log(this.signUpForm)
     debugger;
     const user: User = {
-      code:10,
+      Code:10,
       firstName: this.signUpForm.controls.firstName.value,
       lastName: this.signUpForm.controls.lastName.value,
       userName: this.signUpForm.controls.userName.value,
