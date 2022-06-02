@@ -15,9 +15,6 @@ a {
   color: white;
 }
 
-#user {
-  direction: ltr;
-}
 
 #header {
   display: inline;
@@ -25,13 +22,15 @@ a {
 
 p{
   margin: 4px;
-  
+  direction: rtl;
 }
 #user{
   color: white;
   font-size: medium;
   margin: 4px;
+  direction: rtl;
+  
 }
 li > div{
-  direction: rtl;
+  
 }

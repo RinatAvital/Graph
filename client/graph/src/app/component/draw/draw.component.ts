@@ -9,6 +9,7 @@ import * as util from 'zrender/lib/core/util';
 import * as echarts from 'echarts';
 import { GraphNew } from 'src/app/models/GraphNew';
 import { Point } from 'src/app/models/Point';
+import { Graph } from 'src/app/models/Graph';
 
 
 
@@ -20,7 +21,7 @@ import { Point } from 'src/app/models/Point';
 export class DrawComponent implements OnInit {
 
   point: Point[] = [];
-  histiriList: Equation[] = [];
+  histiryList: Graph[] = [];
   equation: Equation
   nigzeret: Equation
   myGraph: any;
@@ -587,11 +588,11 @@ export class DrawComponent implements OnInit {
       console.log(res);
     })
   }
-  histori() {
+  history() {
     debugger;
-    this.dbService.getHistori(this.dbService.user2).subscribe(res => {
+    this.dbService.getHistory(this.dbService.user2).subscribe(res => {
       debugger;
-      this.histiriList = res;
+      this.histiryList = res;
       console.log(res);
     })
   }

@@ -18,16 +18,19 @@
     </div>
 
     <div id="chad">
-        <input id="func" (input)="onInputChange($event)" class="input" value={{value}}
+        <div id="chad2">
+            <input id="func" (input)="onInputChange($event)" class="input" value={{value}}
             placeholder="enter a function f(x)= x^2" />
-        <button class="btn btn-secondary" (click)="send()">send</button>
-        <button class="btn btn-secondary" (click)="ShowNigzeret()">הצגת ניגזרת</button>
-        <button class="btn btn-secondary" (click)="showPoint()">הצגת נקודות</button>
-        <p *ngFor="let po of point">({{po.X}},{{po.Y}})</p>
-        <button class="btn btn-secondary" (click)="histori()">הצגת היסטוריה</button>
-
-        <!-- <input type="button" value="הצגת נקודות" (click)="showPoint()">
-        <p *ngFor="let g of point">{{g.X}}</p> -->
+            <button class="btn btn-secondary" (click)="send()">שליחת הפונקציה</button>
+            <button class="btn btn-secondary" (click)="ShowNigzeret()">הצגת ניגזרת</button>
+            <button class="btn btn-secondary" (click)="showPoint()">הצגת נקודות</button>
+           
+            <div id="point" class="card"  *ngFor="let po of point" >({{(po.X)}},{{(po.Y)}})</div>
+        </div>
+        <div>
+            <button class="btn btn-secondary" (click)="history()">הצגת היסטוריה</button>
+            <div class="card"  *ngFor="let h of histiryList" >* {{h.graphString}}</div>
+        </div>
     </div>
 
 

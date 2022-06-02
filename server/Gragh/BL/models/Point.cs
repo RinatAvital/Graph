@@ -33,18 +33,19 @@ namespace BL.models
             if (e.Count == 2 && e.Class == 1)
             {
                 double a1 = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
-                double b1 = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1); 
+                double b1 = e.Parameters[1].Value * (e.Parameters[1].Operator == '-' ? -1 : 1);
                 double x = (-b1 / a1);
                 Points.Add(new Point(x, 0));
                 Points.Add(new Point(0, b1));
+                return Points;
             }
 
             //משוואה עם שלושה איברים מלאים
             else if (e.Count == 3 && e.Class == 2)
             {
                 a = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1); //להכפיל באופרטור
-                b = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);//להכפיל באופרטור
-                c = e.Parameters[2].Value * (e.Parameters[0].Operator == '-' ? -1 : 1); //להכפיל באופרטור
+                b = e.Parameters[1].Value * (e.Parameters[1].Operator == '-' ? -1 : 1);//להכפיל באופרטור
+                c = e.Parameters[2].Value * (e.Parameters[2].Operator == '-' ? -1 : 1); //להכפיל באופרטור
 
             }
 
@@ -52,9 +53,8 @@ namespace BL.models
             else if (e.Count == 2 && e.Class == 2 && e.Parameters[1].Class == 1)
             {
                 a = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
-                b = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
+                b = e.Parameters[1].Value * (e.Parameters[1].Operator == '-' ? -1 : 1);
                 c = 0;
-
             }
 
             //משוואה עם שתי איברים ממעלה שניה - a, c
@@ -62,7 +62,7 @@ namespace BL.models
             {
                 a = e.Parameters[0].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
                 b = 0;
-                c = e.Parameters[1].Value * (e.Parameters[0].Operator == '-' ? -1 : 1);
+                c = e.Parameters[1].Value * (e.Parameters[1].Operator == '-' ? -1 : 1);
             }
 
             Console.WriteLine();
@@ -79,11 +79,52 @@ namespace BL.models
 
             Console.WriteLine();
 
-            //חישוב קודקוד הפונקציה - נקודת קיצון
+            
+
+            double Ykodkod = 0;
             double Xkodkod = (-b) / (2 * a);
-            double Ykodkod = (a * Math.Pow(Xkodkod, e.Parameters[0].Class)
+
+            if (c==0)
+            {
+                //חישוב קודקוד הפונקציה - נקודת קיצון
+                Ykodkod = (a * Math.Pow(Xkodkod, e.Parameters[0].Class)
+                + (b * Math.Pow(Xkodkod, e.Parameters[1].Class)));
+
+                //חישוב נקודות עם ציר האיי
+                double Yx = 0;
+                double Yy = (a * Math.Pow(Yx, e.Parameters[0].Class)
+                    + (b * Math.Pow(Yx, e.Parameters[1].Class)));
+                Points.Add(new Point(Yx, Yy));
+            }
+            else if (b == 0)
+            {
+                //חישוב קודקוד הפונקציה - נקודת קיצון
+                Ykodkod = (a * Math.Pow(Xkodkod, e.Parameters[0].Class)
+                + (c * Math.Pow(Xkodkod, e.Parameters[1].Class)));
+
+                //חישוב נקודות עם ציר האיי
+                double Yx = 0;
+                double Yy = (a * Math.Pow(Yx, e.Parameters[0].Class)
+                + (c * Math.Pow(Yx, e.Parameters[1].Class)));
+                Points.Add(new Point(Yx, Yy));
+            }
+            else
+            {
+
+                //חישוב קודקוד הפונקציה - נקודת קיצון
+                Ykodkod = (a * Math.Pow(Xkodkod, e.Parameters[0].Class)
                 + (b * Math.Pow(Xkodkod, e.Parameters[1].Class))
                 + (c * Math.Pow(Xkodkod, e.Parameters[2].Class)));
+
+
+                //חישוב נקודות עם ציר האיי
+                double Yx = 0;
+                double Yy = (a * Math.Pow(Yx, e.Parameters[0].Class)
+                    + (b * Math.Pow(Yx, e.Parameters[1].Class))
+                    + (c * Math.Pow(Yx, e.Parameters[2].Class)));
+                Points.Add(new Point(Yx, Yy));
+            }
+
             Console.WriteLine("kodkod");
             Points.Add(new Point(Xkodkod, Ykodkod));
             //Console.WriteLine("(" + Xkodkod + ", " + Ykodkod + ")");
@@ -98,9 +139,9 @@ namespace BL.models
 
             Equation nigzeret = new Equation();
             nigzeret.Parameters = new List<Parameter>();
-           
+
             int m = 0;
-            
+
             foreach (var i in e.Parameters)
             {
                 if (i.Class == 0) break;

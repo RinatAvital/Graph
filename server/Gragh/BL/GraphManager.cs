@@ -28,22 +28,17 @@ namespace BL
             //return Calculate.getPoint(equation);
             //return new DtoGraph(g, points);
         }
-        public static List<DtoGraph> histori(int code)
+        public static List<DtoGraph> history(int code)
         {
             List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
-            List<DtoGraph> g = DtoGraph.DTOtoList(graph).Where(gg => gg.userCode == code).ToList();
+            List<DtoGraph> g = DtoGraph.DTOtoList(graph).Where(gg => gg.userCode == code).Reverse().ToList();
             return g;
         }
 
 
         public static List<Point> getPointGraph(Equation e)
         {
-            //List<Graphs> graph = db.GetDbSet<Graphs>().ToList();
-            //List<DtoGraph> g = DtoGraph.DTOtoList(graph);
-            //Equation equation = Calculate.getEquationFromStr(g[1].graphString);
             return Point.culc_points(e);
-            //return Calculate.getPoint(equation);
-            //return new DtoGraph(g, points);
         }
 
         //public static Equation getOneGraph()

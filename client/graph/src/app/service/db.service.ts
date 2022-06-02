@@ -53,7 +53,8 @@ export class DbService {
     return this.http.post<Equation>('http://localhost:59111/api/Graph/PostNigzeret', graph);
   }
   //מחזירה את היסטוריית חיפושים של משתמש
-  getHistori(user: User): Observable<Equation[]> {
-    return this.http.post<Equation[]>('http://localhost:59111/aapi/Graph/PostHistori', user);
+  getHistory(user: User): Observable<Graph[]> {
+    debugger;
+    return this.http.post<Graph[]>('http://localhost:59111/api/Graph/PostHistory', user);
   }
 }

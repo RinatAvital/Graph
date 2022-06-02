@@ -8,6 +8,7 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['home']" routerLinkActive="router-link-active">כניסה</a>
       </li>
+      
       <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="['graph']" routerLinkActive="router-link-active">Graph</a>
       </li>
@@ -17,12 +18,12 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['sign-up']" routerLinkActive="router-link-active">Sign Up</a>
       </li> -->
+      
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['draw']" routerLinkActive="router-link-active">גרף</a>
       </li>
-      <li>
-        <div id="user">
-          <!-- <p> {{db.user2.firstName}} :שם פרטי</p> -->
+      <li id="user">
+        <div >
           <p> {{db.user2.firstName}} :שם</p>
           <p> {{db.user2.userName}} :שם משתמש</p>
         </div>

@@ -16,8 +16,8 @@ namespace DAL
     {
         public int graphCode { get; set; }
         public string graphString { get; set; }
-        public int userCode { get; set; }
-        public System.DateTime creationDate { get; set; }
+        public Nullable<int> userCode { get; set; }
+        public Nullable<System.DateTime> creationDate { get; set; }
     
         public virtual Users Users { get; set; }
     }

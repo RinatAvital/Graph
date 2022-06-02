@@ -40,9 +40,24 @@ input {
   border: 2px rgb(176, 150, 150) solid;
   background-color: rgb(244, 238, 238);
   border-radius: 12px;
+  align-content: space-between;
   flex-direction: column;
-  align-items: stretch;
+  justify-content: space-between;
+  
 }
+#chad2{
+  display: flex;
+  flex-direction: column;
+    align-items: stretch;
+}
+
+#point{
+  width: 110px; ;
+  text-align: center;
+}
+
+
+ 
 
 button{
   margin: 5px;

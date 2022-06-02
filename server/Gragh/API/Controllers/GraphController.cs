@@ -36,10 +36,10 @@ namespace API.Controllers
             return BL.GraphManager.getPointGraph(e);
         }
 
-        // POST: api/Graph/PostHistori
-        public List<DtoGraph> PostHistori(Users u)
+        // POST: api/Graph/PostHistory
+        public List<DtoGraph> PostHistory(Users u)
         {
-            return BL.GraphManager.histori(u.Code);
+            return BL.GraphManager.history(u.Code);
         }
 
         // POST: api/Graph/PostImportGraphString

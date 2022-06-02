@@ -47,7 +47,7 @@ export class SignUpComponent implements OnInit {
         debugger;
         console.log(res);
         this.db.user2 = res;
-        alert("נוסף בהצלחה");
+        alert("משתמש חדש נוסף בהצלחה");
       },
       err => console.log("error: " + err.message)
     )

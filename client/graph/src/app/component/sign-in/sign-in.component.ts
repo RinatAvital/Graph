@@ -38,9 +38,8 @@ export class SignInComponent implements OnInit {
     this.db.newSignIn(user).subscribe(
       res => {
         debugger;
-        console.log(res);
-        // this.db.user2 = res;
-        alert("נוסף בהצלחה");
+        this.db.user2 = res;
+        alert("משתמש קיים עודכן בהצלחה");
       },
       err => console.log("error: " + err.message)
     )
