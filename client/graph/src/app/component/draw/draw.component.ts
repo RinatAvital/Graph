@@ -21,6 +21,14 @@ import { Graph } from 'src/app/models/Graph';
 export class DrawComponent implements OnInit {
 
   point: Point[] = [];
+  pointX: Point[] = [];
+  pointK: Point[] = [];
+  pointY: Point[] = [];
+  p1:Point = {X:0, Y:0};
+  p2:Point =  {X:0, Y:0};
+  p3:Point =  {X:0, Y:0};
+  p4:Point =  {X:0, Y:0};
+
   histiryList: Graph[] = [];
   equation: Equation
   nigzeret: Equation
@@ -584,8 +592,17 @@ export class DrawComponent implements OnInit {
     this.dbService.getPointGraph(this.equation).subscribe(res => {
       debugger;
       this.point = res;
+      this.p1=this.point[0];
+      this.p2=this.point[1];
+      this.p3=this.point[2];
+      this.p4=this.point[3];
+
       debugger;
-      console.log(res);
+      console.log(this.point);
+      console.log(this.p1);
+      console.log(this.p2);
+      console.log(this.p3);
+      console.log(this.p4);
     })
   }
   history() {

@@ -24,8 +24,18 @@
             <button class="btn btn-secondary" (click)="send()">שליחת הפונקציה</button>
             <button class="btn btn-secondary" (click)="ShowNigzeret()">הצגת ניגזרת</button>
             <button class="btn btn-secondary" (click)="showPoint()">הצגת נקודות</button>
-           
-            <div id="point" class="card"  *ngFor="let po of point" >({{(po.X)}},{{(po.Y)}})</div>
+            <div id="point" class="card">
+
+            </div>
+            <p>נקודות אפס:</p>
+            <div id="point" class="card"  >({{(p1.X)}},{{(p1.Y)}})</div>
+            <div id="point" class="card"  >({{(p2.X)}},{{(p2.Y)}})</div>
+            <p>נקודת חיתוך ציר Y:</p>
+            <div id="point" class="card"  >({{(p3.X)}},{{(p3.Y)}})</div>
+            <p>נקודת קיצון:</p>
+            <div id="point" class="card"  >({{(p4.X)}},{{(p4.Y)}})</div>
+            <!-- <div id="point" class="card"  *ngFor="let po of point" >({{(po.X)}},{{(po.Y)}})</div>
+            <div id="point" class="card"  *ngFor="let po of point" >({{(po.X)}},{{(po.Y)}})</div> -->
         </div>
         <div>
             <button class="btn btn-secondary" (click)="history()">הצגת היסטוריה</button>

@@ -65,21 +65,12 @@ namespace BL.models
                 c = e.Parameters[1].Value * (e.Parameters[1].Operator == '-' ? -1 : 1);
             }
 
-            Console.WriteLine();
-            Console.WriteLine("print a, b, c");
-            Console.WriteLine("a= " + a + "\nb= " + b + "\nc= " + c);
-            Console.WriteLine();
-
             //חישוב טרינום -נקודות חיתוך עם ציר האיקס
             double x1 = ((-b) + Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
             double x2 = ((-b) - Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
             Points.Add(new Point(x1, 0));
             Points.Add(new Point(x2, 0));
-            Console.WriteLine("print Cutting points");
 
-            Console.WriteLine();
-
-            
 
             double Ykodkod = 0;
             double Xkodkod = (-b) / (2 * a);
