@@ -7,6 +7,7 @@
         <div id="container"></div>
 
         <!--keyboard  -->
+        <!-- document.querySelector("#keyboardContainer > div:nth-child(2) > div > div > div:nth-child(1)") -->
 
         <div style="text-align:center">
             <!-- <input (input)="onInputChange($event)" class="input" value={{value}}
@@ -19,14 +20,13 @@
 
     <div id="chad">
         <div id="chad2">
-            <input id="func" (input)="onInputChange($event)" class="input" value={{value}}
+            <input id="func" name="input"  (input)="onInputChange($event)" class="input" value={{value}}
             placeholder="enter a function f(x)= x^2" />
             <button class="btn btn-secondary" (click)="send()">שליחת הפונקציה</button>
             <button class="btn btn-secondary" (click)="ShowNigzeret()">הצגת ניגזרת</button>
             <button class="btn btn-secondary" (click)="showPoint()">הצגת נקודות</button>
-            <div id="point" class="card">
+            <div></div>
 
-            </div>
             <p>נקודות אפס:</p>
             <div id="point" class="card"  >({{(p1.X)}},{{(p1.Y)}})</div>
             <div id="point" class="card"  >({{(p2.X)}},{{(p2.Y)}})</div>
@@ -39,9 +39,7 @@
         </div>
         <div>
             <button class="btn btn-secondary" (click)="history()">הצגת היסטוריה</button>
-            <div class="card"  *ngFor="let h of histiryList" >* {{h.graphString}}</div>
+            <div class="card" *ngFor="let h of histiryList" (click)="clickHistory(h.graphString)">* {{h.graphString}}</div>
         </div>
     </div>
-
-
 </div>

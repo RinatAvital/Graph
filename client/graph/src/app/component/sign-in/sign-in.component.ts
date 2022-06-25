@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/models/User';
 import { UserSignIn } from 'src/app/models/UserSignIn';
+import { Router } from '@angular/router';
 import { DbService } from 'src/app/service/db.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class SignInComponent implements OnInit {
 
   signInForm: any;
 
-  constructor(private db: DbService) { }
+  constructor(private db: DbService, public router:Router) { }
 
   ngOnInit(): void {
 
@@ -40,6 +41,8 @@ export class SignInComponent implements OnInit {
         debugger;
         this.db.user2 = res;
         alert("משתמש קיים עודכן בהצלחה");
+        
+        this.router.navigate(['/draw']);
       },
       err => console.log("error: " + err.message)
     )

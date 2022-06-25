@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,FormBuilder } from '@angular/forms';
 import { DbService } from 'src/app/service/db.service';
 import { User } from 'src/app/models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +13,7 @@ export class SignUpComponent implements OnInit {
 
   signUpForm: any;
 
-  constructor(private db: DbService) { }
+  constructor(private db: DbService, public router: Router) { }
 
   ngOnInit(): void {
 
@@ -48,6 +49,7 @@ export class SignUpComponent implements OnInit {
         console.log(res);
         this.db.user2 = res;
         alert("משתמש חדש נוסף בהצלחה");
+        this.router.navigate(['/draw']);
       },
       err => console.log("error: " + err.message)
     )

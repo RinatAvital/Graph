@@ -1,7 +1,7 @@
 import { Parameter } from "./Parameter";
 
 export class Equation {
-    class: number;
-    count: number;
+    Class: number;
+    Count: number;
     Parameters: Parameter[];
 }
